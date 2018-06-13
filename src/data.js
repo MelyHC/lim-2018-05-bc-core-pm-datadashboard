@@ -29,15 +29,11 @@ fetch('http://127.0.0.1:5500/data/cohorts.json')
               return response.json();
             })
             .then((myProgress) => {
-              let progresoIds = '';
-              for (let idsNombre in myProgress) {
-                progresoIds += '  ' +idsNombre;
-              }
-              console.log(progresoIds); 
+              let progresoIds = Object.entries(myProgress);
               for(i = 0; i < myUser.length; i++) {
                 caracter += '<tr>';
                 caracter += '<td>' +  myUser[i].name  + '</td>'  ;
-                if(progresoIds === myUser[i].id) {
+                if(progresoIds[i][0] === myUser[i].id) {
                   caracter += '<td>bien funciona</td>';
                   caracter += '</tr>';
                 }
