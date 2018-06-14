@@ -66,7 +66,7 @@ html *{
  .logo1{
      width:20px;
      height:20px;
-     background-image: url(https://crisescobar.files.wordpress.com/2018/06/book-icon-1461-e1528947600904.png);
+     background-image: url(https://crisescobar.files.wordpress.com/2018/06/book-icon-1461-e1528947899267.png);
     float: left;
     size: 100%;
     margin-left: 6px;
@@ -104,19 +104,17 @@ html *{
  
  /*body*/
  
- #body{
-     position:absolute;
-     right:0px;
-     min-height:300px;
-     left:170px;   
-     
- }
+
  
  #texto{
      width:90%;
      min-height:300px;
     float:left;
     color: black;
+    position:absolute;
+    right:0px;
+    min-height:300px;
+    left:170px;  
     
    
  }
@@ -126,7 +124,7 @@ html *{
     margin: 10px;
     height: 150px;
     color:rgb(255, 255, 255);
-    background-image: url(https://crisescobar.files.wordpress.com/2018/06/lab-cort-e1528956200235.jpg);
+    background-image: url(https://crisescobar.files.wordpress.com/2018/06/lab-cort-e1528956254938.jpg);
     MARGIN-RIGHT: -80px;
    
  }
@@ -146,5 +144,9 @@ html *{
  .eligeuncohort {
     margin: 10px;
     color: rgb(255, 229 , 33);
+    
+ }
+ #GENERAL{
+     display: none;
  }
 
