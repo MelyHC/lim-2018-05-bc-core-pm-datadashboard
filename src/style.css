@@ -1,6 +1,8 @@
 html *{
     font-family:oswald;  
     
+    
+    
     }
     h1{
     background-color: rgb(255, 229 , 33)
@@ -19,6 +21,7 @@ html *{
     margin:0px;
      padding:0px;
      
+     
  }
  
  #barra-lateral{
@@ -29,10 +32,12 @@ html *{
      overflow:hidden;
      -webkit-transition:width 0.5s cubic-bezier(.61,.01,.37,1);
      color:#bcbcbc; 
+     
  }
  
  #barra-lateral:hover{
      width:170px;
+     
  }
  
  #logo-menu{
@@ -40,10 +45,12 @@ html *{
      height:30px;
      margin:10px;
      background-image:url(https://crisescobar.files.wordpress.com/2018/06/menu.png);
+     
  }
  
  #contenedor-logos-primero{
      margin-top:70px;
+     
  }
  
  .contenedor-logos{
@@ -52,6 +59,7 @@ html *{
      width:130px;
     height:40px;
     background-color:
+    
      
  }
 
@@ -63,6 +71,8 @@ html *{
     size: 100%;
     margin-left: 6px;
     margin-top: 10px;
+    
+    
 
    
  }
@@ -79,7 +89,18 @@ html *{
      margin-left:60px;
     line-height: 40px;
    
+    
+   
  }
+
+ .botonmenu{
+    list-style:none;
+ }
+
+ .link{
+    text-decoration:none
+ }
+ 
  
  /*body*/
  
