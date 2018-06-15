@@ -1,18 +1,18 @@
 let nombreUsuarios = document.getElementById('nombre');
 let cohorts = document.getElementById('cohorts')
 
-fetch('http://127.0.0.1:5500/data/cohorts.json')
+fetch('../data/cohorts.json')
   .then((response) => {
-   return response.json();
+    return response.json();
   })
   .then((myCohort) => {
     let nombreCohort = '';
-    for(i = 0; i < myCohort.length; i++) {
+    for (i = 0; i < myCohort.length; i++) {
       nombreCohort += '<option value="' + myCohort[i].id + '">' + myCohort[i].id + '</option>';
     }
-    cohorts.innerHTML = nombreCohort 
+    cohorts.innerHTML = nombreCohort;
     cohorts.addEventListener('change', () => {
-      fetch('http://127.0.0.1:5500/data/cohorts/'+ cohorts.value +'/users.json')
+      fetch('../data/cohorts/' + cohorts.value + '/users.json')
         .then((response) => {
           return response.json();
         })
@@ -20,25 +20,39 @@ fetch('http://127.0.0.1:5500/data/cohorts.json')
           let caracter = '';
           caracter += '<tr>';
           caracter += '<th>Nombres</th>';
+          caracter += '<th>General</th>';
           caracter += '<th>Ejercicios</th>';
           caracter += '<th>Quiz</th>';
           caracter += '<th>Lecturas</th>';
           caracter += '</tr>'
-          fetch('http://127.0.0.1:5500/data/cohorts/'+ cohorts.value +'/progress.json')
+          fetch('../data/cohorts/' + cohorts.value + '/progress.json')
             .then((response) => {
               return response.json();
             })
             .then((myProgress) => {
               let progresoIds = Object.entries(myProgress);
-              for(i = 0; i < myUser.length; i++) {
+              for (i = 0; i < myUser.length; i++) {
                 caracter += '<tr>';
-                caracter += '<td>' +  myUser[i].name  + '</td>'  ;
-                if(progresoIds[i][0] === myUser[i].id) {
-                  caracter += '<td>bien funciona</td>';
-                  caracter += '</tr>';
+                caracter += '<td>' + myUser[i].name + '</td>';
+                if(myProgress.hasOwnProperty(myUser[i].id)) {
+                  const progressUser = myProgress[myUser[i].id];
+                  if(progressUser.hasOwnProperty('intro')){
+                    const intro = progressUser.intro;
+                    if (intro.hasOwnProperty('percent')) {
+                      caracter += '<td>' + intro.percent + '</td>';
+                      caracter += '</tr>';
+                    } else {
+                      caracter += '<td>0</td>';
+                      caracter += '</tr>';
+                    }
+                  } else {
+                    caracter += '<td>No inicio</td>';
+                      caracter += '</tr>';
+                  }
                 }
+                //console.log(progresoIntro.percent)
               }
-              nombreUsuarios.innerHTML = caracter
+              nombreUsuarios.innerHTML = caracter;
             })
         })
     })
