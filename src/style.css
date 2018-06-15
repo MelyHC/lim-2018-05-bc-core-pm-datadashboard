@@ -1,29 +1,87 @@
 html *{
-    font-family:oswald;  
-    
-    
-    
-    }
+    font-family:oswald; 
+   
+ }
+ 
+ /*inicio*/
+ 
+ .bodyinicio {
+    background-color: rgb(255, 229 , 33);
+    background-image: url("https://crisescobar.files.wordpress.com/2018/06/imageninicio1.jpg");
+ background-repeat: no-repeat;
+ display: flex;
+ min-height:100vh;
+ float: right;
+ width: 45%;
+ 
+ 
+ }
+ 
+ #formulario {
+    margin:auto;
+    width: 300px;
+    max-width:500px;
+    background: #F3F3F3;
+    padding:30px;
+    border: 1px solid (rgba(0,0,0.2));
+ 
+ }
+ h2 {
+    text-align:center;
+    margin-bottom:20px;
+    color: black;
+ }
+ 
+ .usuario, .contraseña, .entrar {
+   
+    display:block;
+    padding:10px;
+    width:80%;
+    margin:20px 0;
+    font-size: 15px;
+   
+ }
+ 
+ .entrar {
+    background: black;
+    color:white;
+    cursor: pointer;
+ 
+ }
+ 
+ .entrar:hover {
+    background: rgb(51, 51, 51);
+ }
+ 
+ .entrar:active {
+    transform: scale(0.95);
+ }
+ 
+ 
+ 
+ 
+    /* head */
+   
     h1{
     background-color: rgb(255, 229 , 33)
-   
+ 
+  
     }
     .titulo{
     padding-left: 10px;
-    padding-bottom: 10px;
+    padding-bottom: 25px;
     padding-top: 20px;
     font-size: 35px;
     color: black;
+    width: 120%;
      }
- 
  /*menu lateral*/
  *{
     margin:0px;
      padding:0px;
-     
-     
- }
+    
  
+ }
  #barra-lateral{
      position:fixed;
      width:65px;
@@ -31,38 +89,51 @@ html *{
      background-color:#2f3030;
      overflow:hidden;
      -webkit-transition:width 0.5s cubic-bezier(.61,.01,.37,1);
-     color:#bcbcbc; 
-     
+     color:#bcbcbc;
+     position:fixed;
+     text-decoration:none;
+    
+    
+    
  }
- 
  #barra-lateral:hover{
      width:170px;
-     
- }
+     position:fixed;
+     text-decoration:none;
+    
+    
  
+ }
  #logo-menu{
      width:30px;
      height:30px;
      margin:10px;
      background-image:url(https://crisescobar.files.wordpress.com/2018/06/menu.png);
-     
+     text-decoration:none;
+     cursor: pointer;
  }
- 
  #contenedor-logos-primero{
      margin-top:70px;
-     
- }
  
+    
+   
+    
+ }
  .contenedor-logos{
      margin-top:20px;
      margin-left:10px;
      width:130px;
     height:40px;
-    background-color:
-    
-     
+    display:block;
+    text-decoration:none;
+   
  }
-
+ 
+ .contenedor-logos:hover{
+    background: #494b4b;
+ }
+ 
+ 
  .logo1{
      width:20px;
      height:20px;
@@ -71,42 +142,52 @@ html *{
     size: 100%;
     margin-left: 6px;
     margin-top: 10px;
-    
-    
-
+    text-decoration:none;
    
+ 
  }
-
+ 
  .logo2{
     width:30px;
     height:30px;
     background-image: url(https://crisescobar.files.wordpress.com/2018/06/person-e1528946694339.png);
    float: left;
    size: 100%;
+   text-decoration:none;
  }
- 
  .title-menu{
      margin-left:60px;
     line-height: 40px;
-   
-    
-   
+    text-decoration:none;
+    color: rgb(255, 229 , 33);
  }
-
+ 
  .botonmenu{
     list-style:none;
- }
-
- .link{
-    text-decoration:none
+    display:block;
+ 
  }
  
  
  /*body*/
- 
-
- 
- #texto{
+ #seccion-general {
+    width:90%;
+    min-height:300px;
+   float:left;
+   color: black;
+   position:absolute;
+   right:0px;
+   min-height:300px;
+   left:170px; 
+ }
+ #texto-contenedor-2{
+    font-size: 50px;
+    margin: 10px;
+    height: 150px;
+    color:rgb(255, 255, 255);
+    background-image: url(https://crisescobar.files.wordpress.com/2018/06/lab-cort-e1528956254938.jpg);
+ }
+ #seccion-alumnas{
      width:90%;
      min-height:300px;
     float:left;
@@ -114,39 +195,47 @@ html *{
     position:absolute;
     right:0px;
     min-height:300px;
-    left:170px;  
-    
+    left:170px; 
    
+  
  }
- 
  #texto-contenedor-1{
     font-size: 50px;
     margin: 10px;
     height: 150px;
     color:rgb(255, 255, 255);
     background-image: url(https://crisescobar.files.wordpress.com/2018/06/lab-cort-e1528956254938.jpg);
-    MARGIN-RIGHT: -80px;
-   
+  
  }
  .imagendestacada {
     background-repeat: no-repeat;
  }
- 
  .tabla {
      color: black;
      margin: 10px;
      }
-
+ 
  .nombre {
         color: black;
  }
-
- .eligeuncohort {
+ 
+ #eligeuncohort {
     margin: 10px;
-    color: rgb(255, 229 , 33);
-    
+    color: rgb(255, 33, 188);
+   
  }
- #GENERAL{
+ #seccion-general{
      display: none;
  }
-
+ 
+ 
+ 
+ tr {
+ text-align: center;
+ background-color: #f0ecece5;
+ }
+ 
+ #nombrestabla {
+    text-align: left;
+ }
+ 
