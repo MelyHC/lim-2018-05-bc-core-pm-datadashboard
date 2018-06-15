@@ -38,19 +38,39 @@ fetch('../data/cohorts.json')
                   const progressUser = myProgress[myUser[i].id];
                   if(progressUser.hasOwnProperty('intro')){
                     const intro = progressUser.intro;
+                    const unitIntroduction = intro.units['01-introduction'];
+                    const unitVariables = intro.units['02-variables-and-data-types'];
+                    const unitUx = intro.units['03-ux-design'];
+                    const resultadoExecises = unitVariables.parts['06-exercises'].completed ;
+                    const resultadoQuiz = unitIntroduction.parts['04-quiz'].completed + unitVariables.parts['05-quiz'].completed + unitUx.parts['03-quiz'].completed;
+                    const resultadoLecturas = unitIntroduction.parts['00-welcome-and-orientation'].completed + unitIntroduction.parts['01-growth-mindset'].completed +unitIntroduction.parts['02-why-learn-to-code'].completed + unitIntroduction.parts['03-your-first-website'].completed + unitVariables.parts['00-values-data-types-and-operators'].completed + unitVariables.parts['01-variables'].completed + unitVariables.parts['02-self-learning-MDN'].completed + unitVariables.parts['03-comments'].completed + unitUx.parts['00-development-team'].completed + unitUx.parts['01-ux-design'].completed + unitUx.parts['02-ux-design-vs-ui-design'].completed; 
                     if (intro.hasOwnProperty('percent')) {
-                      caracter += '<td>' + intro.percent + '</td>';
-                      caracter += '</tr>';
-                    } else {
-                      caracter += '<td>0</td>';
-                      caracter += '</tr>';
+                      caracter += '<td>' + intro.percent + '%</td>';
+                      if (resultadoExecises === 1) {
+                        caracter += '<td>100%</td>';
+                        caracter += '<td>' + parseInt(resultadoQuiz * 100 / 3) + '%</td>';
+                        caracter += '<td>' + parseInt(resultadoLecturas * 100 / 11) + '%</td>';
+                        caracter += '</tr>';
+                      } else if (resultadoExecises === 0.5) {
+                        caracter += '<td>50%</td>';
+                        caracter += '<td>' + parseInt(resultadoQuiz * 100 / 3) + '%</td>';
+                        caracter += '<td>' + parseInt(resultadoLecturas * 100 / 11) + '%</td>';
+                        caracter += '</tr>';
+                      }else {
+                        caracter += '<td>0%</td>';
+                        caracter += '<td>' + parseInt(resultadoQuiz * 100 / 3) + '%</td>';
+                        caracter += '<td>' + parseInt(resultadoLecturas * 100 / 11) + '%</td>';
+                        caracter += '</tr>';
+                      }
                     }
                   } else {
                     caracter += '<td>No inicio</td>';
-                      caracter += '</tr>';
+                    caracter += '<td>No inicio</td>';
+                    caracter += '<td>No inicio</td>';
+                    caracter += '<td>No inicio</td>';
+                    caracter += '</tr>';
                   }
                 }
-                //console.log(progresoIntro.percent)
               }
               nombreUsuarios.innerHTML = caracter;
             })
