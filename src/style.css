@@ -210,11 +210,7 @@ html *{
  .imagendestacada {
     background-repeat: no-repeat;
  }
- .tabla {
-     color: black;
-     margin: 10px;
-     }
- 
+
  .nombre {
         color: black;
  }
@@ -228,7 +224,17 @@ html *{
      display: none;
  }
  
- 
+  /*tabla*/
+
+  .tabla {
+    color: black;
+    margin: 10px;
+    }
+
+
+
+
+
  
  tr {
  text-align: center;
@@ -239,3 +245,13 @@ html *{
     text-align: left;
  }
  
+ tabla {     font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+    font-size: 12px;    margin: 45px;     width: 480px; text-align: left;    border-collapse: collapse; }
+
+th {     font-size: 13px;     font-weight: normal;     padding: 8px;     background: #b9c9fe;
+    border-top: 4px solid #aabcfe;    border-bottom: 1px solid #fff; color: #039; }
+
+td {    padding: 8px;     background: #e8edff;     border-bottom: 1px solid #fff;
+    color: #669;    border-top: 1px solid transparent; }
+
+tr:hover td { background: #d0dafd; color: #339; }
