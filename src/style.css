@@ -1,88 +1,88 @@
 html *{
     font-family:oswald; 
-   
- }
+    margin:0px;
+    padding:0px;
+
+}
  
- /*inicio*/
+
+/*inicio*/
  
- .bodyinicio {
+.bodyinicio {
     background-color: rgb(255, 229 , 33);
     background-image: url("https://crisescobar.files.wordpress.com/2018/06/imageninicio1.jpg");
- background-repeat: no-repeat;
- display: flex;
- min-height:100vh;
- float: right;
- width: 45%;
+    background-repeat: no-repeat;
+    display: flex;
+    min-height:100vh;
+    float: right;
+    width: 45%;
+
+}
  
- 
- }
- 
- #formulario {
+#formulario {
     margin:auto;
     width: 300px;
     max-width:500px;
     background: #F3F3F3;
     padding:30px;
     border: 1px solid (rgba(0,0,0.2));
- 
- }
- h2 {
+
+}
+
+h2 {
     text-align:center;
     margin-bottom:20px;
     color: black;
- }
+
+}
  
- .usuario, .contraseña, .entrar {
-   
+.usuario, .contraseña, .entrar {
     display:block;
     padding:10px;
     width:80%;
     margin:20px 0;
     font-size: 15px;
-   
- }
+
+}
  
- .entrar {
+.entrar {
     background: black;
     color:white;
     cursor: pointer;
+
+}
  
- }
- 
- .entrar:hover {
+.entrar:hover {
     background: rgb(51, 51, 51);
- }
+
+}
  
- .entrar:active {
+.entrar:active {
     transform: scale(0.95);
- }
+
+}
  
  
- 
- 
-    /* head */
+/* head */
    
-    h1{
+h1{
     background-color: rgb(255, 229 , 33)
- 
-  
-    }
-    .titulo{
+
+}
+
+.titulo{
     padding-left: 10px;
     padding-bottom: 25px;
     padding-top: 20px;
     font-size: 35px;
     color: black;
     width: 120%;
-     }
- /*menu lateral*/
- *{
-    margin:0px;
-     padding:0px;
-    
- 
- }
- #barra-lateral{
+    }
+
+     
+/* menu lateral */
+
+#barra-lateral{
      position:fixed;
      width:65px;
      height:100%;
@@ -91,95 +91,91 @@ html *{
      -webkit-transition:width 0.5s cubic-bezier(.61,.01,.37,1);
      color:#bcbcbc;
      position:fixed;
-     text-decoration:none;
-    
-    
-    
- }
- #barra-lateral:hover{
+     
+}
+
+#barra-lateral:hover{
      width:170px;
      position:fixed;
-     text-decoration:none;
-    
-    
- 
- }
- #logo-menu{
+     
+}
+
+#logo-menu{
      width:30px;
      height:30px;
      margin:10px;
      background-image:url(https://crisescobar.files.wordpress.com/2018/06/menu.png);
-     text-decoration:none;
      cursor: pointer;
- }
- #contenedor-logos-primero{
+}
+
+#contenedor-logos-primero{
      margin-top:70px;
- 
-    
-   
-    
- }
- .contenedor-logos{
+     
+}
+
+.contenedor-logos{
      margin-top:20px;
      margin-left:10px;
      width:130px;
-    height:40px;
-    display:block;
-    text-decoration:none;
-   
+     height:40px;
+     display:block;
+     
  }
  
- .contenedor-logos:hover{
-    background: #494b4b;
- }
+.contenedor-logos:hover{
+     background: #494b4b;
+     
+}
  
  
- .logo1{
+.logo1{
      width:20px;
      height:20px;
      background-image: url(https://crisescobar.files.wordpress.com/2018/06/book-icon-1461-e1528947899267.png);
-    float: left;
-    size: 100%;
-    margin-left: 6px;
-    margin-top: 10px;
-    text-decoration:none;
-   
- 
+     float: left;
+     size: 100%;
+     margin-left: 6px;
+     margin-top: 10px;
+    
  }
  
  .logo2{
     width:30px;
     height:30px;
     background-image: url(https://crisescobar.files.wordpress.com/2018/06/person-e1528946694339.png);
-   float: left;
-   size: 100%;
-   text-decoration:none;
+    float: left;
+    size: 100%;
+    text-decoration:none;
  }
+
  .title-menu{
-     margin-left:60px;
+    margin-left:60px;
     line-height: 40px;
     text-decoration:none;
     color: rgb(255, 229 , 33);
+    
  }
  
  .botonmenu{
     list-style:none;
     display:block;
- 
+    
  }
  
  
  /*body*/
+
  #seccion-general {
     width:90%;
     min-height:300px;
-   float:left;
-   color: black;
-   position:absolute;
-   right:0px;
-   min-height:300px;
-   left:170px; 
+    float:left;
+    color: black;
+    position:absolute;
+    right:0px;
+    min-height:300px;
+    left:170px; 
  }
+
  #texto-contenedor-2{
     font-size: 50px;
     margin: 10px;
@@ -187,71 +183,88 @@ html *{
     color:rgb(255, 255, 255);
     background-image: url(https://crisescobar.files.wordpress.com/2018/06/lab-cort-e1528956254938.jpg);
  }
+
  #seccion-alumnas{
-     width:90%;
-     min-height:300px;
+    width:90%;
+    min-height:300px;
     float:left;
     color: black;
     position:absolute;
     right:0px;
     min-height:300px;
     left:170px; 
-   
-  
  }
+
  #texto-contenedor-1{
     font-size: 50px;
     margin: 10px;
     height: 150px;
     color:rgb(255, 255, 255);
     background-image: url(https://crisescobar.files.wordpress.com/2018/06/lab-cort-e1528956254938.jpg);
-  
- }
+  }
+
  .imagendestacada {
     background-repeat: no-repeat;
  }
 
  .nombre {
-        color: black;
+    color: black;
  }
  
  #eligeuncohort {
     margin: 10px;
-    color: rgb(255, 33, 188);
-   
+    color: rgb(0, 0, 0);
  }
+
  #seccion-general{
-     display: none;
+    display: none;
  }
  
-  /*tabla*/
-
-  .tabla {
-    color: black;
-    margin: 10px;
-    }
-
-
-
-
-
+  
  
- tr {
- text-align: center;
- background-color: #f0ecece5;
- }
+ /*tabla*/
+
+tr {                                                      /*texto de la tabla centrado*/
+    text-align: center;  
+}
  
- #nombrestabla {
-    text-align: left;
- }
+#nombrestabla {                                           /*nombres de las alumnas a la izquierda*/
+    text-align: left;     
+}
+
+.tabla {             
+    color: black;                                           /*color del selector*/
+    margin: 20px;   
+    margin-left: 7px;                                         /*posicion del selector en la web*/
+}
  
- tabla {     font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
-    font-size: 12px;    margin: 45px;     width: 480px; text-align: left;    border-collapse: collapse; }
+th {                                                      /*apartados de la tabla*/ 
+    font-size: 15px;    
+    font-weight: normal;    
+    padding: 10px;    
+    background: rgb(252, 233, 86); ;
+    border-top: 4px, solid, rgb(242, 217, 30);   
+    border-bottom: 5px solid #fff; 
+    padding-right: 72px;
+    padding-left: 72px;
+}
 
-th {     font-size: 13px;     font-weight: normal;     padding: 8px;     background: #b9c9fe;
-    border-top: 4px solid #aabcfe;    border-bottom: 1px solid #fff; color: #039; }
+.listado {                                               /*posicion de la tabla en la web*/ 
+    margin-left: 4px;
+}
 
-td {    padding: 8px;     background: #e8edff;     border-bottom: 1px solid #fff;
-    color: #669;    border-top: 1px solid transparent; }
 
-tr:hover td { background: #d0dafd; color: #339; }
+td {   
+    padding: 8px;    
+    background: rgb(240, 240, 240);  
+    border-bottom: 1px solid rgb(216, 216, 216);
+    color: rgb(42, 42, 43);  
+    border-top: 1px solid transparent;
+}
+
+tr:hover td {
+    background: rgb(228, 225, 225); 
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+}
+
