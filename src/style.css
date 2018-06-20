@@ -36,7 +36,7 @@ h2 {
 
 }
  
-.usuario, .contraseña, .entrar {
+#usuario, #contraseña, #entrar {
     display:block;
     padding:10px;
     width:80%;
@@ -45,7 +45,7 @@ h2 {
 
 }
  
-.entrar {
+#entrar {
     background: black;
     color:white;
     cursor: pointer;
@@ -230,12 +230,14 @@ tr {                                                      /*texto de la tabla ce
  
 #nombrestabla {                                           /*nombres de las alumnas a la izquierda*/
     text-align: left;     
+    
 }
 
 .tabla {             
     color: black;                                           /*color del selector*/
     margin: 20px;   
     margin-left: 7px;                                         /*posicion del selector en la web*/
+    border-radius: 10px;
 }
  
 th {                                                      /*apartados de la tabla*/ 
@@ -247,6 +249,7 @@ th {                                                      /*apartados de la tabl
     border-bottom: 5px solid #fff; 
     padding-right: 72px;
     padding-left: 72px;
+    border-radius: 7px;
 }
 
 .listado {                                               /*posicion de la tabla en la web*/ 
@@ -260,6 +263,7 @@ td {
     border-bottom: 1px solid rgb(216, 216, 216);
     color: rgb(42, 42, 43);  
     border-top: 1px solid transparent;
+    
 }
 
 tr:hover td {
