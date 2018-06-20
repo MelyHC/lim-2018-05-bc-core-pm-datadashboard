@@ -1,17 +1,19 @@
-window.data = {
-  computeUsersStasts: () => {
+/*window.data = {
+  computeUsersStasts = (user, progress, courses) => {
+    stats =>{
     
+    }
   },
-  sortUsers: () => {
+  sortUsers = (users, orderBy, orderDirection) => {
 
   },
-  filterUsers: () => {
+  filterUsers = (users, search) => {
 
   },
-  prcessCohortData: () => {
+  processCohortData = (options) => {
     
   } 
-}
+}*/
 
 let nombreUsuarios = document.getElementById('nombre');
 let cohorts = document.getElementById('cohorts')
@@ -47,21 +49,22 @@ fetch('../data/cohorts.json')
            .then((myProgress) => {
              let progresoIds = Object.entries(myProgress);
              for (i = 0; i < myUser.length; i++) {
+                if (myUser[i].role === "student") {
                caracter += '<tr>';
                caracter += '<td id= "nombrestabla">' + myUser[i].name + '</td>';
-               if(myProgress.hasOwnProperty(myUser[i].id)) {
+                  if (myProgress.hasOwnProperty(myUser[i].id)) {
                  const progressUser = myProgress[myUser[i].id];
-                 if(progressUser.hasOwnProperty('intro')){
+                    if (progressUser.hasOwnProperty('intro')) {
                    const intro = progressUser.intro;
                    const unitIntroduction = intro.units['01-introduction'];
                    const unitVariables = intro.units['02-variables-and-data-types'];
                    const unitUx = intro.units['03-ux-design'];
-                   const resultadoExecises = unitVariables.parts['06-exercises'].completed ;
+                      const resultadoExecises = unitVariables.parts['06-exercises'].completed;
                    const resultadoQuiz = unitIntroduction.parts['04-quiz'].completed + unitVariables.parts['05-quiz'].completed + unitUx.parts['03-quiz'].completed;
-                   const resultadoLecturas = unitIntroduction.parts['00-welcome-and-orientation'].completed + unitIntroduction.parts['01-growth-mindset'].completed +unitIntroduction.parts['02-why-learn-to-code'].completed + unitIntroduction.parts['03-your-first-website'].completed + unitVariables.parts['00-values-data-types-and-operators'].completed + unitVariables.parts['01-variables'].completed + unitVariables.parts['02-self-learning-MDN'].completed + unitVariables.parts['03-comments'].completed + unitUx.parts['00-development-team'].completed + unitUx.parts['01-ux-design'].completed + unitUx.parts['02-ux-design-vs-ui-design'].completed;
+                      const resultadoLecturas = unitIntroduction.parts['00-welcome-and-orientation'].completed + unitIntroduction.parts['01-growth-mindset'].completed + unitIntroduction.parts['02-why-learn-to-code'].completed + unitIntroduction.parts['03-your-first-website'].completed + unitVariables.parts['00-values-data-types-and-operators'].completed + unitVariables.parts['01-variables'].completed + unitVariables.parts['02-self-learning-MDN'].completed + unitVariables.parts['03-comments'].completed + unitUx.parts['00-development-team'].completed + unitUx.parts['01-ux-design'].completed + unitUx.parts['02-ux-design-vs-ui-design'].completed;
                    if (intro.hasOwnProperty('percent')) {
                      caracter += '<td>' + intro.percent + '</td>';
-                       caracter += '<td>'+ resultadoExecises*100 +'</td>';
+                        caracter += '<td>' + resultadoExecises * 100 + '</td>';
                        caracter += '<td>' + parseInt(resultadoQuiz * 100 / 3) + '</td>';
                        caracter += '<td>' + parseInt(resultadoLecturas * 100 / 11) + '</td>';
                        caracter += '</tr>';
@@ -75,6 +78,7 @@ fetch('../data/cohorts.json')
                  }
                }
              }
+              }
              nombreUsuarios.innerHTML = caracter;
            })
        })
