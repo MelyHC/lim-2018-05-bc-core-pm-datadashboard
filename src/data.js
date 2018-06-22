@@ -8,13 +8,13 @@
   } 
 }*/
 
-const computeUsersStasts = (user, progress, courses) => {
+window.computeUsersStasts = (user, progress, courses) => {
   let userWithStats = {
     stast: {
-      percent: 100,
+      percent: 0,
       exercises: {
-        total: 100,
-        completed: 100,
+        total: 0,
+        completed: 0,
         percent: 100
       },
       reads: {
