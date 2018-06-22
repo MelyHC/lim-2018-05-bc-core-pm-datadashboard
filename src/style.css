@@ -238,6 +238,7 @@ tr {                                                      /*texto de la tabla ce
     margin: 20px;   
     margin-left: 7px;                                         /*posicion del selector en la web*/
     border-radius: 10px;
+    
 }
  
 th {                                                      /*apartados de la tabla*/ 
@@ -258,6 +259,7 @@ th {                                                      /*apartados de la tabl
 
 
 td {   
+    
     padding: 8px;    
     background: rgb(240, 240, 240);  
     border-bottom: 1px solid rgb(216, 216, 216);
@@ -272,3 +274,8 @@ tr:hover td {
     cursor: pointer;
 }
 
+.scroll {
+    overflow: scroll;
+    width: 90%;
+    height:300px;
+}
