@@ -1,53 +1,47 @@
 <!DOCTYPE html>
 <html>
- <head id="head">
-   <meta charset="utf-8">
-   <title>Data Dashboard LABORATORIA</title>
-   <link rel="stylesheet" href="style.css" />
- </head>
-<div>
-<h1 class="titulo"> LaboDashboard>></h1>
-</div>
-</head>
-
-<body>
- <div id="barra-lateral">
-    <div id="logo-menu">
+  <head id="head">
+    <meta charset="utf-8">
+    <title>Data Dashboard LABORATORIA</title>
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+  </head>
+  <body>
+    <header>
+      <h1 class="titulo"> LaboDashboard</h1>
+    </header>
+    <div id="barra-lateral">
+      <div id="logo-menu"></div>
+      <section>
+        <div id="contenedor-logos-primero" class="contenedor-logos">
+          <div class="logo1"></div>
+            <span id="general" class="botonmenu">
+              <a href="#">
+                <p class="title-menu"> General</p>
+              </a>
+            </span>
+        </div>
+        <div class="contenedor-logos">
+          <div class="logo2"></div>
+            <span id="alumnas" class="botonmenu">
+              <a href="#">
+                <p class="title-menu">Alumnas</p>
+              </a>
+            </span>
+        </div> 
+      </section>
     </div>
-    <div id="contenedor-logos-primero" class="contenedor-logos">
-    <div class="logo1">
+    <div id="seccion-alumnas">
+      <p class="imagendestacada" id="texto-contenedor-1"> Alumnas</p>
+      <p id="eligeuncohort"> Elige un cohort de la lista:</p>
+      <select class="tabla" id="cohorts"></select>
+      <table class="listado" id="nombre"></table>
     </div>
-   
-    <ul>
-    <li id="general" class="botonmenu"><a  href="#"><p class="title-menu"> General</p></a></li>
-    </div>
-
-   <div class="contenedor-logos">
-   <div class="logo2">
-   </div>
-      <li id="alumnas" class="botonmenu"> <a  href="#"><p class="title-menu">Alumnas</p></a></li>
- </ul>
-   </div>
- </div>
-    <div id="seccion-alumnas" >
-     <p class= "imagendestacada" id="texto-contenedor-1"> Alumnas</p>
-     <p id="eligeuncohort"> Elige un cohort de la lista:</p>
-     <p> <select class="tabla" id="cohorts" ></select>
-     <p>  <table class="listado" id="nombre"></table> </p>
-   </div>
-   
-   
-    <div id="seccion-general">
-    <p class= "imagendestacada" id="texto-contenedor-2"> General </p>
-    <p> Aquí se mostrarán los resultados generales </p>
-    </div>
-
-
- </div>
-
- <script src="main.js"></script>
- <script src="data.js"></script>
- <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
- </body>
+      <div id="seccion-general">
+        <p class="imagendestacada" id="texto-contenedor-2"> General </p>
+        <p> Aquí se mostrarán los resultados generales </p>
+      </div>
+    <script src="main.js"></script>
+    <script src="data.js"></script>
+  </body>
 </html>
-
