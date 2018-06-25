@@ -62,7 +62,7 @@ else
   chooseCohort.addEventListener('change', () => {
     fetch('../data/cohorts/' + chooseCohort.value + '/users.json')
       .then((response) => response.json())
-      .then((myUsers) => {
+      .then((users) => {
         let output = '';
         output += '<tr>';
         output += '<th> Nombres </th>';
@@ -73,13 +73,13 @@ else
         output += '</tr>'
         fetch('../data/cohorts/' + chooseCohort.value + '/progress.json')
           .then((response) => response.json())
-          .then((myProgress) => {
-            for (i = 0; i < myUsers.length; i++) {
-              if (myUsers[i].role === "student") {
+          .then((progress) => {
+            for (i = 0; i < users.length; i++) {
+              if (users[i].role === "student") {
                 output += '<tr>';
-                output += '<td id= "nombrestabla">' + myUsers[i].name + '</td>';
-                if (myProgress.hasOwnProperty(myUsers[i].id)) {
-                  const progressUser = myProgress[myUsers[i].id];
+                output += '<td id= "nombrestabla">' + users[i].name + '</td>';
+                if (progress.hasOwnProperty(users[i].id)) {
+                  const progressUser = progress[users[i].id];
                   if (progressUser.hasOwnProperty('intro')) {
                     const intro = progressUser.intro;
                     const unitIntroduction = intro.units['01-introduction'];
@@ -96,10 +96,10 @@ else
                       output += '</tr>';
                     }
                   } else {
-                    output += '<td>No inicio</td>';
-                    output += '<td>No inicio</td>';
-                    output += '<td>No inicio</td>';
-                    output += '<td>No inicio</td>';
+                    output += '<td>-</td>';
+                    output += '<td>-</td>';
+                    output += '<td>-</td>';
+                    output += '<td>-</td>';
                     output += '</tr>';
                   }
                 }

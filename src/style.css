@@ -1,3 +1,6 @@
+/*'Open Sans', sans-serif;*/
+/*font-family: 'Bitter', serif;*/
+
 html *{
     margin:0px;
     padding:0px;
@@ -72,7 +75,7 @@ h2 {
 }
 
 .info {
-    padding-left: 60%;
+    padding-left: 64%;
 }
 
 .info, info1 info2, info3, linea1 {
@@ -100,10 +103,12 @@ h2 {
      position:fixed;
      width:65px;
      height:100%;
-     background-color:#2f3030;
+     background-color:black;
      overflow:hidden;
      -webkit-transition:width 0.5s cubic-bezier(.61,.01,.37,1);
      color:#bcbcbc;
+     font-family: 'Bitter', serif;
+     font-weight:700;
      
      
 }
@@ -191,11 +196,12 @@ h2 {
  }
 
  #texto-contenedor-2{
-    font-size: 50px;
+    font-size: 30px;
     margin: 10px;
-    height: 150px;
+    height: 170px;
     color:rgb(255, 255, 255);
-    background-image: url(https://crisescobar.files.wordpress.com/2018/06/lab-cort-e1528956254938.jpg);
+    background-image: url(https://crisescobar.files.wordpress.com/2018/06/hackathon-1-prueba1-e1529960874489.jpg);
+    width: 89%;
  }
 
  #seccion-alumnas{
@@ -207,19 +213,28 @@ h2 {
     right:0px;
     min-height:300px;
     left:170px; 
+    
  }
-
- #texto-contenedor-1{
-    font-size: 50px;
+ .alumnas-destacada{   /*palabra alumnas*/
+     padding-top: 5px;
+     padding-left: 20px;
+     font-size: 50px;
+     color:white;
+     font-family: 'Bitter', serif;
+     font-weight:700;
+     stop-opacity: inherit;
+    
+ }
+ .texto-contenedor-1{  /*alumnas*/
     margin: 10px;
-    height: 150px;
-    color:rgb(255, 255, 255);
-    background-image: url(https://crisescobar.files.wordpress.com/2018/06/lab-cort-e1528956254938.jpg);
-  }
-
- .imagendestacada {
+    height: 170px;    
+    background-image: url(https://crisescobar.files.wordpress.com/2018/06/hackathon-1-prueba1-e1529960874489.jpg);
+    width: 89%;
     background-repeat: no-repeat;
- }
+    opacity: 0.9;
+    
+}
+ 
 
  .nombre {
     color: black;
@@ -259,12 +274,14 @@ th {                                                      /*apartados de la tabl
     font-size: 15px;    
     font-weight: normal;    
     padding: 10px;    
-    background: rgb(252, 233, 86); ;
+    background: rgb(86, 248, 154);
     border-top: 4px, solid, rgb(242, 217, 30);   
     border-bottom: 5px solid #fff; 
-    padding-right: 72px;
-    padding-left: 72px;
+    padding-right: 64px;
+    padding-left: 64px;
     border-radius: 7px;
+    font-family: 'Bitter', serif;
+     font-weight:700;
 }
 
 .listado {                                               /*posicion de la tabla en la web*/ 
@@ -294,6 +311,3 @@ tr:hover td {
     height:300px;
 }
 
-.comandos {
-    background-color: #2f3030;
-}
