@@ -6,14 +6,18 @@
   const al = document.getElementById('alumnas');  // VARIABLE EVENTO CLICK ALUMNA
 
   gen.addEventListener("click", () => {
-    document.getElementById("seccion-general").style.display = 'block';
+    document.getElementById("seccion-general").style.display = 'inline-block';
     mostrar();
   });
 
   al.addEventListener("click", () => {
-    document.getElementById("seccion-alumnas").style.display = 'block';
+    document.getElementById("seccion-alumnas").style.display = 'inline-block';
     document.getElementById("seccion-general").style.display = 'none';
   });
+
+
+
+
 
 //Función y condiciones para usuario y contraseña de inicio.html
 function validar()
@@ -43,6 +47,7 @@ else
       .then((response) => response.json())
       .then((myCohorts) => {
         let output = '';
+
         for (nameCohort of myCohorts) {
           const cohortsIds = nameCohort.id;
           const splitCohort = cohortsIds.split('-');

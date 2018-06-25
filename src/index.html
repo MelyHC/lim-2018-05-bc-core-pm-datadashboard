@@ -4,12 +4,21 @@
     <meta charset="utf-8">
     <title>Data Dashboard LABORATORIA</title>
     <link rel="stylesheet" href="style.css" />
-    <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Bitter:400,400i,700"  rel="stylesheet">
   </head>
   <body>
-    <header>
-      <h1 class="titulo"> LaboDashboard</h1>
-    </header>
+    <div class="cabecera">
+      <img class="info1" src="https://crisescobar.files.wordpress.com/2018/06/logo2.png" width="250px">
+      <div class="info"> 
+      <img class="info2" src="https://www.shareicon.net/data/128x128/2016/05/26/771202_people_512x512.png" width="50px">
+     <div style="display:inline-block">
+      <span class="linea1">¡Bienvenida!</span> <span> 
+      <span class="linea2">AlejandraLima</span>
+      <span class="linea3">Sede-Perú</span>
+    </div>
+    </div>
+  </div>
+  <div>
     <div id="barra-lateral">
       <div id="logo-menu"></div>
       <section>
@@ -32,6 +41,7 @@
       </section>
     </div>
     <div id="seccion-alumnas">
+
       <p class="imagendestacada" id="texto-contenedor-1"> Alumnas</p>
       <p id="eligeuncohort"></p>
       <select class="tabla" id="country" >
@@ -45,10 +55,13 @@
       <select class="tabla" id="cohort">
         <option value="" disabled selected hidden>Escoge tu cohort</option>
       </select>    
+     
       <div class="scroll">
         <table class="listado" id="nombre"></table> 
       </div>
     </div>
+
+
     <div id="seccion-general">
       <p class="imagendestacada" id="texto-contenedor-2"> General </p>
       <p> Aquí se mostrarán los resultados generales </p>

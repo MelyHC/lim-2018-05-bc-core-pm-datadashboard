@@ -1,5 +1,4 @@
 html *{
-    font-family:oswald; 
     margin:0px;
     padding:0px;
 
@@ -65,14 +64,29 @@ h2 {
  
 /* head */
    
-h1{
-    background-color: rgb(255, 229 , 33)
-
-}
-
-.titulo{
+.cabecera{
+    background-color: rgb(255, 229 , 33);
+    padding-top: 20px;
     padding-left: 10px;
     padding-bottom: 25px;
+}
+
+.info {
+    padding-left: 60%;
+}
+
+.info, info1 info2, info3, linea1 {
+    display: inline;
+}
+
+.linea2 {
+    display:block;
+}
+
+
+.titulo{
+    
+    
     padding-top: 20px;
     font-size: 35px;
     color: black;
@@ -90,7 +104,7 @@ h1{
      overflow:hidden;
      -webkit-transition:width 0.5s cubic-bezier(.61,.01,.37,1);
      color:#bcbcbc;
-     position:fixed;
+     
      
 }
 
@@ -278,4 +292,8 @@ tr:hover td {
     overflow: scroll;
     width: 90%;
     height:300px;
+}
+
+.comandos {
+    background-color: #2f3030;
 }
