@@ -70,33 +70,44 @@ h2 {
 .cabecera{
     background-color: rgb(255, 229 , 33);
     padding-top: 20px;
-    padding-left: 10px;
+    padding-left: 15px;
     padding-bottom: 25px;
 }
 
 .info {
-    padding-left: 64%;
+    padding-left: 57%;
 }
 
-.info, info1 info2, info3, linea1 {
+
+.info1 {                   /*logo*/
+    width:282px;
+    padding-left: 1px;
+    
+}
+.info2 {
+    width:55px;
+    border-radius:20px;
+    
+}
+
+.info, info1 info2, info3, linea1, iconhouse {
     display: inline;
-}
+    font-family: 'Bitter', serif;
+    font-weight:700;
+    font-size: 15px;
 
+    
+}
 .linea2 {
     display:block;
+    font-family: 'Bitter', serif;
+    font-weight: 400;
+    background-color: rgb(255, 204, 0);
+  
+    
+    
 }
-
-
-.titulo{
-    
-    
-    padding-top: 20px;
-    font-size: 35px;
-    color: black;
-    width: 120%;
-    }
-
-     
+  
 /* menu lateral */
 
 #barra-lateral{
@@ -184,27 +195,8 @@ h2 {
  
  /*body*/
 
- #seccion-general {
-    width:90%;
-    min-height:300px;
-    float:left;
-    color: black;
-    position:absolute;
-    right:0px;
-    min-height:300px;
-    left:170px; 
- }
 
- #texto-contenedor-2{
-    font-size: 30px;
-    margin: 10px;
-    height: 170px;
-    color:rgb(255, 255, 255);
-    background-image: url(https://crisescobar.files.wordpress.com/2018/06/hackathon-1-prueba1-e1529960874489.jpg);
-    width: 89%;
- }
-
- #seccion-alumnas{
+ #seccion-alumnas, #seccion-general {
     width:90%;
     min-height:300px;
     float:left;
@@ -216,24 +208,42 @@ h2 {
     
  }
  .alumnas-destacada{   /*palabra alumnas*/
-     padding-top: 5px;
-     padding-left: 20px;
-     font-size: 50px;
+     padding-top: 10px;
+     padding-left: 9px;
+     font-size: 25px;
      color:white;
      font-family: 'Bitter', serif;
      font-weight:700;
-     stop-opacity: inherit;
     
  }
- .texto-contenedor-1{  /*alumnas*/
+
+ 
+ .imagendestacada {  /*palabra general*/
+    padding-top: 10px;
+    padding-left: 9px;
+    font-size: 25px;
+    color:white;
+    font-family: 'Bitter', serif;
+    font-weight:700;
+ }
+ .texto-contenedor-1{  /*alumnas imagen*/
     margin: 10px;
-    height: 170px;    
+    height: 100px;    
     background-image: url(https://crisescobar.files.wordpress.com/2018/06/hackathon-1-prueba1-e1529960874489.jpg);
-    width: 89%;
+    width: 87%;
     background-repeat: no-repeat;
-    opacity: 0.9;
-    
+    opacity:0.8;
 }
+
+.texto-contenedor-2{ /*general imagen*/
+    margin: 10px;
+    height: 100px;    
+    background-image: url(https://crisescobar.files.wordpress.com/2018/06/hackathon-1-prueba1-e1529960874489.jpg);
+    width: 87%;
+    background-repeat: no-repeat;
+    opacity:0.8;
+  
+ }
  
 
  .nombre {
@@ -267,25 +277,28 @@ tr {                                                      /*texto de la tabla ce
     margin: 20px;   
     margin-left: 7px;                                         /*posicion del selector en la web*/
     border-radius: 10px;
+    font-family: 'Bitter', serif;
     
 }
  
 th {                                                      /*apartados de la tabla*/ 
     font-size: 15px;    
+    width: 500px;
     font-weight: normal;    
     padding: 10px;    
     background: rgb(86, 248, 154);
     border-top: 4px, solid, rgb(242, 217, 30);   
     border-bottom: 5px solid #fff; 
-    padding-right: 64px;
-    padding-left: 64px;
-    border-radius: 7px;
+    padding-right: 50px;
+    padding-left: 50px;
+    
     font-family: 'Bitter', serif;
      font-weight:700;
 }
 
 .listado {                                               /*posicion de la tabla en la web*/ 
     margin-left: 4px;
+    
 }
 
 
@@ -296,6 +309,8 @@ td {
     border-bottom: 1px solid rgb(216, 216, 216);
     color: rgb(42, 42, 43);  
     border-top: 1px solid transparent;
+    font-family: 'Open Sans', serif; 
+    
     
 }
 
@@ -307,7 +322,59 @@ tr:hover td {
 
 .scroll {
     overflow: scroll;
-    width: 90%;
-    height:300px;
+    width: 88%;
+    height:330px;
 }
 
+/* GENERAL */
+
+.bloque1{
+    float: left;
+    width: 20%;
+    background: rgb(51, 51, 51);
+    padding: 20px;
+    margin-left: 11px;
+    text-align: center;
+    height: 200px;
+    display:inline;
+    font-family: 'Bitter', serif;
+    color:white;    
+    }
+
+
+
+
+    
+    
+    .dato1, .dato2, .dato3 {
+        font-family: 'Bitter', serif;
+        font-weight: 800;
+        font-size: 50px;
+        color:white;
+    }
+ 
+    .bloque2{
+    float: left;
+    width: 20%;
+    background: rgb(220, 87, 149);
+    padding: 20px;
+    margin-left: 100px;
+    text-align: center;
+    height: 200px;
+    display:inline;     
+    font-family: 'Bitter', serif;     
+    color:white;       
+        }
+    
+    .bloque3{
+        float: left;
+        width: 20%;
+        background:  rgb(86, 248, 154);
+        padding: 20px;
+        margin-left: 110px;
+        text-align: center;
+        height: 200px;
+        display:inline; 
+        font-family: 'Bitter', serif;   
+        color:white;              
+    }
