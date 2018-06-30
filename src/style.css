@@ -242,7 +242,7 @@ h2 {
  }
  
  #eligeuncohort {
-    margin: 1%;
+    margin: 1%; 
     color: rgb(0, 0, 0);
  }
 
@@ -267,32 +267,32 @@ tr {                                                      /*texto de la tabla ce
     
 }
 
-.select1, .select2 {             
+.select1, .select2, .select3 {             
     color: black;                                           /*color del selector*/
     margin: 2%;   
-    margin-left: 0.5%;                                         /*posicion del selector en la web*/
+    margin-left: 0%;
+    padding-left: 5px;                                         /*posicion del selector en la web*/
     border-radius: 10px;
     font-family: 'Bitter', serif;
     
 }
  
 th {                                                      /*apartados de la tabla*/ 
-    font-size: 15px;    
+    font-size: 100%;    
     width: 40%;
     font-weight: normal;    
     padding: 0.5%;    
     background: rgb(86, 248, 154);
     border-top: 4px, solid, rgb(242, 217, 30);   
     border-bottom: 5px solid #fff; 
-    padding-right: 30px;
-    padding-left: 30px;
-    
+    padding-right: 15px;
+    padding-left: 15px;
     font-family: 'Bitter', serif;
      font-weight:700;
 }
 
 .listado {                                               /*posicion de la tabla en la web*/ 
-    margin-left: 1%;
+    margin-left: 0%;
     
 }
 td {   
@@ -329,7 +329,7 @@ tr:hover td {
     display:inline;
     font-family: 'Bitter', serif;
     color:black;   
-    font-weight: 800;
+    font-weight: 700;
 }
     .general-block1 {
     margin-left: 1%;
@@ -347,8 +347,8 @@ tr:hover td {
     
     .block1-info, .block2-info, .block3-info {
         font-family: 'Bitter', serif;
-        font-weight: 800;
-        font-size: 250%;
+        font-weight: 700;
+        font-size: 60px;
         
     }
  
