@@ -6,6 +6,8 @@ html *{
     padding:0px;
 
 }
+
+
  
 
 /*inicio*/
@@ -67,38 +69,45 @@ h2 {
  
 /* head */
    
-.cabecera{
+.header{
+    margin-right:0%;
     background-color: rgb(255, 229 , 33);
-    padding-top: 20px;
-    padding-left: 15px;
-    padding-bottom: 25px;
+    padding-top: 2%;
+    padding-left: 1%;
+    padding-right:0%;
+    padding-bottom: 2%;
 }
-
-.info {
-    padding-left: 57%;
-}
-
-
-.info1 {                   /*logo*/
-    width:282px;
-    padding-left: 1px;
+.logo {                   
+    width:18%;
+    padding-left: 1%;
     
 }
-.info2 {
-    width:55px;
+
+.block-header {
+    padding-left: 61.5%;
+}
+
+.profilePhoto {
+    width:30px;
     border-radius:20px;
     
+    
 }
 
-.info, info1 info2, info3, linea1, iconhouse {
+
+.sub-block {
+    display:inline-block;
+}
+
+.block-header, logo, profilePhoto {
     display: inline;
     font-family: 'Bitter', serif;
     font-weight:700;
-    font-size: 15px;
+    font-size: 85%;
 
     
 }
-.linea2 {
+.line2 {
     display:block;
     font-family: 'Bitter', serif;
     font-weight: 400;
@@ -110,7 +119,7 @@ h2 {
   
 /* menu lateral */
 
-#barra-lateral{
+.lateral-menu{
      position:fixed;
      width:65px;
      height:100%;
@@ -120,17 +129,17 @@ h2 {
      color:#bcbcbc;
      font-family: 'Bitter', serif;
      font-weight:700;
+     text-decoration:none;
      
      
 }
 
-#barra-lateral:hover{
+.lateral-menu:hover{
      width:170px;
-     position:fixed;
      
 }
 
-#logo-menu{
+.icon1-menu{
      width:30px;
      height:30px;
      margin:10px;
@@ -138,12 +147,12 @@ h2 {
      cursor: pointer;
 }
 
-#contenedor-logos-primero{
+#container-icons{
      margin-top:70px;
      
 }
 
-.contenedor-logos{
+.menu-option{
      margin-top:20px;
      margin-left:10px;
      width:130px;
@@ -152,7 +161,7 @@ h2 {
      
  }
  
-.contenedor-logos:hover{
+.menu-option:hover{
      background: #494b4b;
      
 }
@@ -179,6 +188,7 @@ h2 {
  }
 
  .title-menu{
+    
     margin-left:60px;
     line-height: 40px;
     text-decoration:none;
@@ -186,56 +196,37 @@ h2 {
     
  }
  
- .botonmenu{
-    list-style:none;
-    display:block;
-    
- }
- 
- 
  /*body*/
 
 
  #seccion-alumnas, #seccion-general {
     width:90%;
-    min-height:300px;
     float:left;
     color: black;
     position:absolute;
-    right:0px;
-    min-height:300px;
-    left:170px; 
+    left:13%; 
+  
     
  }
- .alumnas-destacada{   /*palabra alumnas*/
-     padding-top: 10px;
-     padding-left: 9px;
+ .title-alumnas, .title-general{  /*palabra general*/  /*palabra alumnas*/
+     padding-top: 1%;
+     padding-left: 2%;
      font-size: 25px;
      color:white;
      font-family: 'Bitter', serif;
      font-weight:700;
-    
  }
 
- 
- .imagendestacada {  /*palabra general*/
-    padding-top: 10px;
-    padding-left: 9px;
-    font-size: 25px;
-    color:white;
-    font-family: 'Bitter', serif;
-    font-weight:700;
- }
- .texto-contenedor-1{  /*alumnas imagen*/
-    margin: 10px;
-    height: 100px;    
+ .featured-photo-1{  /*alumnas imagen*/
+    margin: 1% 0% 0% 0%;
+    height: 120px;    
     background-image: url(https://crisescobar.files.wordpress.com/2018/06/hackathon-1-prueba1-e1529960874489.jpg);
     width: 87%;
     background-repeat: no-repeat;
     opacity:0.8;
 }
 
-.texto-contenedor-2{ /*general imagen*/
+.featured-photo-2{ /*general imagen*/
     margin: 10px;
     height: 100px;    
     background-image: url(https://crisescobar.files.wordpress.com/2018/06/hackathon-1-prueba1-e1529960874489.jpg);
@@ -251,7 +242,7 @@ h2 {
  }
  
  #eligeuncohort {
-    margin: 10px;
+    margin: 1%;
     color: rgb(0, 0, 0);
  }
 
@@ -263,6 +254,10 @@ h2 {
  
  /*tabla*/
 
+ a {
+    text-decoration:none;
+}
+
 tr {                                                      /*texto de la tabla centrado*/
     text-align: center;  
 }
@@ -272,10 +267,10 @@ tr {                                                      /*texto de la tabla ce
     
 }
 
-.tabla {             
+.select1, .select2 {             
     color: black;                                           /*color del selector*/
-    margin: 20px;   
-    margin-left: 7px;                                         /*posicion del selector en la web*/
+    margin: 2%;   
+    margin-left: 0.5%;                                         /*posicion del selector en la web*/
     border-radius: 10px;
     font-family: 'Bitter', serif;
     
@@ -283,25 +278,23 @@ tr {                                                      /*texto de la tabla ce
  
 th {                                                      /*apartados de la tabla*/ 
     font-size: 15px;    
-    width: 500px;
+    width: 40%;
     font-weight: normal;    
-    padding: 10px;    
+    padding: 0.5%;    
     background: rgb(86, 248, 154);
     border-top: 4px, solid, rgb(242, 217, 30);   
     border-bottom: 5px solid #fff; 
-    padding-right: 50px;
-    padding-left: 50px;
+    padding-right: 30px;
+    padding-left: 30px;
     
     font-family: 'Bitter', serif;
      font-weight:700;
 }
 
 .listado {                                               /*posicion de la tabla en la web*/ 
-    margin-left: 4px;
+    margin-left: 1%;
     
 }
-
-
 td {   
     
     padding: 8px;    
@@ -310,8 +303,6 @@ td {
     color: rgb(42, 42, 43);  
     border-top: 1px solid transparent;
     font-family: 'Open Sans', serif; 
-    
-    
 }
 
 tr:hover td {
@@ -328,53 +319,49 @@ tr:hover td {
 
 /* GENERAL */
 
-.bloque1{
+.general-block1, .general-block2, .general-block3{
     float: left;
     width: 20%;
-    background: rgb(51, 51, 51);
+    background:rgb(243, 243, 243);
     padding: 20px;
-    margin-left: 11px;
     text-align: center;
     height: 200px;
     display:inline;
     font-family: 'Bitter', serif;
-    color:white;    
+    color:black;   
+    font-weight: 800;
+}
+    .general-block1 {
+    margin-left: 1%;
     }
 
-
-
+    .general-block2{
+     margin-left: 8%;   
+     
+    }
+    
+    .general-block3{ 
+    margin-left: 9%;       
+    }
 
     
-    
-    .dato1, .dato2, .dato3 {
+    .block1-info, .block2-info, .block3-info {
         font-family: 'Bitter', serif;
         font-weight: 800;
-        font-size: 50px;
-        color:white;
+        font-size: 250%;
+        
     }
  
-    .bloque2{
-    float: left;
-    width: 20%;
-    background: rgb(220, 87, 149);
-    padding: 20px;
-    margin-left: 100px;
-    text-align: center;
-    height: 200px;
-    display:inline;     
-    font-family: 'Bitter', serif;     
-    color:white;       
+    .block1-info {
+        color:rgb(242, 217, 30); 
+    }
+    
+    .block2-info {
+    color:rgb(86, 248, 154);
+    }
+
+    .block3-info {
+        color:fuchsia;
         }
     
-    .bloque3{
-        float: left;
-        width: 20%;
-        background:  rgb(86, 248, 154);
-        padding: 20px;
-        margin-left: 110px;
-        text-align: center;
-        height: 200px;
-        display:inline; 
-        font-family: 'Bitter', serif;   
-        color:white;              
-    }
+  

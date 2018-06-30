@@ -22,8 +22,8 @@
 //Función y condiciones para usuario y contraseña de inicio.html
 function validar()
 {
-var usuario = document.getElementById("usuario").value;
-var contraseña = document.getElementById("contraseña").value;
+const usuario = document.getElementById("usuario").value;
+const contraseña = document.getElementById("contraseña").value;
 
 if(usuario== "alejandralima" && contraseña == "12345")
 {
@@ -38,9 +38,13 @@ else
   const chooseCountry = document.getElementById("country");
   const chooseCohort = document.getElementById("cohort");
   const nombreUsuarios = document.getElementById('nombre');
+  const usersAscendente = document.getElementById("");
+  const usersDescendente = document.getElementById("");
+
 
   let userId = '';
   let userName = '';
+  
 
   chooseCountry.addEventListener("change", () => {
     fetch('../data/cohorts.json')
@@ -65,6 +69,7 @@ else
       .then((users) => {
         const myUser= users;
         let output = '';
+        
         output += '<tr>';
         output += '<th> Nombres </th>';
         output += '<th> General % </th>';
@@ -72,6 +77,47 @@ else
         output += '<th> Quiz % </th>';
         output += '<th> Lecturas % </th>';
         output += '</tr>'
+
+
+        //funcion sort para orden ascendente
+        
+        const sortUsersAscendent = users.sort((a,b) => {
+          if (a.name > b.name) {
+              return 1;
+            }
+            if (a.name < b.name) {
+              return -1;
+            }
+            return 0;
+            console.log(sortUsersAscendent)
+        })
+
+
+        //funcion sort para orden descendente
+
+        const sortUsersDescendent = users.sort((a,b) => {
+          if (a.name < b.name) {
+              return 1;
+            }
+            if (a.name > b.name) {
+              return -1;
+            }
+            return 0;
+            console.log(sortUsersDescendent)
+        })
+
+
+
+
+
+
+
+
+
+
+
+
+        
         fetch('../data/cohorts/' + chooseCohort.value + '/progress.json')
           .then((response) => response.json())
           .then((myProgress) => {
@@ -116,11 +162,11 @@ else
                                    contadorActualExercises++;
                                 // }
                             } 
-
+                            
                             }
                         //console.log(contadorTotalReads);
                        // console.log(contadorActualReads);
-                        console.log(contadorActualExercises);
+                        //console.log(contadorActualExercises);
                       }})
                     })
                   })
