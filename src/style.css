@@ -3,12 +3,9 @@
 
 html *{
     margin:0px;
-    padding:0px;
+   padding:0px;
 
 }
-
-
- 
 
 /*inicio*/
  
@@ -30,6 +27,7 @@ html *{
     background: #F3F3F3;
     padding:30px;
     border: 1px solid (rgba(0,0,0.2));
+    font-family: 'Bitter', serif;
 
 }
 
@@ -46,6 +44,7 @@ h2 {
     width:80%;
     margin:20px 0;
     font-size: 15px;
+    font-family: 'Bitter', serif;
 
 }
  
@@ -66,15 +65,20 @@ h2 {
 
 }
  
+.login-logo {
+    width: 80%;
+}
  
 /* head */
    
 .header{
     margin-right:0%;
     background-color: rgb(255, 229 , 33);
+  
     padding-top: 2%;
     padding-left: 1%;
     padding-right:0%;
+    border-right:0%;
     padding-bottom: 2%;
 }
 .logo {                   
@@ -94,7 +98,6 @@ h2 {
     
 }
 
-
 .sub-block {
     display:inline-block;
 }
@@ -112,85 +115,42 @@ h2 {
     font-family: 'Bitter', serif;
     font-weight: 400;
     background-color: rgb(255, 204, 0);
-  
-    
-    
 }
   
 /* menu lateral */
 
+
 .lateral-menu{
-     position:fixed;
-     width:65px;
+    position:absolute;
+    padding-top:5%;
+     width:170px;
      height:100%;
      background-color:black;
-     overflow:hidden;
-     -webkit-transition:width 0.5s cubic-bezier(.61,.01,.37,1);
      color:#bcbcbc;
      font-family: 'Bitter', serif;
      font-weight:700;
-     text-decoration:none;
-     
-     
-}
-
-.lateral-menu:hover{
-     width:170px;
+     border-left:0px;
      
 }
 
-.icon1-menu{
-     width:30px;
-     height:30px;
-     margin:10px;
-     background-image:url(https://crisescobar.files.wordpress.com/2018/06/menu.png);
-     cursor: pointer;
-}
 
-#container-icons{
-     margin-top:70px;
-     
-}
-
-.menu-option{
+.menu-option1, .menu-option2{
      margin-top:20px;
-     margin-left:10px;
      width:130px;
      height:40px;
      display:block;
      
  }
  
-.menu-option:hover{
+.menu-option1:hover, .menu-option2:hover{
      background: #494b4b;
      
 }
  
- 
-.logo1{
-     width:20px;
-     height:20px;
-     background-image: url(https://crisescobar.files.wordpress.com/2018/06/book-icon-1461-e1528947899267.png);
-     float: left;
-     size: 100%;
-     margin-left: 6px;
-     margin-top: 10px;
-    
- }
- 
- .logo2{
-    width:30px;
-    height:30px;
-    background-image: url(https://crisescobar.files.wordpress.com/2018/06/person-e1528946694339.png);
-    float: left;
-    size: 100%;
-    text-decoration:none;
- }
 
- .title-menu{
+ .title-menu1, .title-menu2{
     
-    margin-left:60px;
-    line-height: 40px;
+    margin-left:30px;
     text-decoration:none;
     color: rgb(255, 229 , 33);
     
@@ -198,13 +158,14 @@ h2 {
  
  /*body*/
 
-
+ 
  #seccion-alumnas, #seccion-general {
-    width:90%;
-    float:left;
+    margin-left:200px; 
+    width:90%;   
     color: black;
-    position:absolute;
-    left:13%; 
+    
+    padding-left:2%;
+    
   
     
  }
@@ -227,8 +188,8 @@ h2 {
 }
 
 .featured-photo-2{ /*general imagen*/
-    margin: 10px;
-    height: 100px;    
+    margin: 1% 0% 0% 0%;
+    height: 120px;    
     background-image: url(https://crisescobar.files.wordpress.com/2018/06/hackathon-1-prueba1-e1529960874489.jpg);
     width: 87%;
     background-repeat: no-repeat;
@@ -363,5 +324,373 @@ tr:hover td {
     .block3-info {
         color:fuchsia;
         }
+
+
+
+  @media screen and (min-width: 480px) and (max-width: 798px) {
+
+  /* cabecera*/
+    .header{
+        margin-right:0%;
+        padding-left: 1%;
+        padding-bottom: 5%;
+    }
+
+    .logo {          
+        padding-top: 2%;         
+        width:40%;
+        padding-left: 3%;
+        padding-right: 10%;
+       
+    }
+
+    .block-header {
+        padding-left: 15%;
+    }
     
+    .profilePhoto {
+        width:5%;
+        border-radius:20px;   
+    }
+      
+    .block-header, logo, profilePhoto {
+        display: inline;
+        font-family: 'Bitter', serif;
+        font-weight:700;
+        font-size: 80%;    
+    }
+    .sub-block {
+        margin-left: 1%;
+        margin-right: 1%;
+    }
+
+    /*menu horizontal*/
+
+    .lateral-menu{
+        padding-top:1%;
+        margin-top:0px;
+         width:100%;
+         height:7%;
+         background-color:black;
+         color:#bcbcbc;
+         font-family: 'Bitter', serif;
+         font-weight:700;
+         border-left:0px;
+    }
+    
+    
+    .menu-option1, .menu-option2{
+         margin-top:0px; 
+         width:130px;
+         display:inline-block;  
+     }
+    
+     .title-menu1, .title-menu2{
+        margin-top:3px;
+        margin-left:30px;
+        text-decoration:none;
+        color: white;
+     }
+
+
+/*body*/
+
+
+#seccion-alumnas, #seccion-general {
+    padding-top:10%;
+    width:100%;
+    color: black;
+    margin-left: 20px;
+    
+ }
+ .title-alumnas, .title-general{  /*palabra general*/  /*palabra alumnas*/
+     padding-top: 1%;
+     padding-left: 2%;
+     font-size: 15px;
+     color: black;
+ }
+
+ .featured-photo-1{  /*alumnas imagen*/
+    background-image: url("http://www.color-hex.com/palettes/33778.png");
+    background-color: red;
+    height: 50px;    
+}
+
+.featured-photo-2{ /*general imagen*/
+    background-image: url("http://www.color-hex.com/palettes/33778.png");
+    height: 50px;     
+ }
+ 
+/*  tabla */
+
+ 
+th {                                                      /*apartados de la tabla*/ 
+    font-size: 70%;    
+    width: 40%;
+    font-weight: normal;    
+    padding: 0.5%;    
+    background-color : rgb(188, 188, 188); 
+      
+    border-bottom: 5px solid #fff; 
+    padding-right: 10px;
+    padding-left: 10px;
+    font-family: 'Bitter', serif;
+     font-weight:700;
+}
+
+
+
+
+
+.scroll {
+    overflow: scroll;
+    width: 88%;
+    height:330px;
+}
+}
+
+/* GENERAL */
+
+.general-block1, .general-block2, .general-block3{
+    margin-top: 35px;
+    width: 20%;
+    background:rgb(243, 243, 243);
+    padding: 20px;
+    text-align: center;
+    height: 200px;
+    display:inline;
+    font-size: 13px;
+}
+    .general-block1 {
+    margin-left: 0%;
+    }
+
+    .general-block2{
+     margin-left: 6%;   
+     
+    }
+    
+    .general-block3{ 
+    margin-left: 6%;       
+    }
+
+    
+    .block1-info, .block2-info, .block3-info {
+        font-family: 'Bitter', serif;
+        font-weight: 700;
+        font-size: 60px;
+        
+    }
+ 
+    .block1-info, .block2-info, .block3-info {
+        color:rgb(255, 229 , 33);
+        font-size: 50px;
+    }
+    
+ 
+
+
+@media screen  and (min-width: 0px) and (max-width: 480px) {
+
+      /* cabecera*/
+    .header{
+        margin-right:0%;
+        padding-left: 15%;
+        padding-bottom: 5%;
+    }
+
+    .logo {          
+        padding-top: 2%;      
+        padding-right: 2%;
+        padding-left: 80%;   
+        width:90%;
+        padding-left: 2%;
+        
+    }
+
+    .block-header {
+        padding-left: 25%;;
+        padding-right: 25%;
+        margin-right:5%;
+        border-right:8%px;
+        font-size:5px;
+       
+        
+    }
+    
+    .profilePhoto {
+        width:25px;
+        border-radius:20px;   
+    }
+      
+    .block-header, profilePhoto {
+        display: inline;
+        font-family: 'Bitter', serif;
+        font-weight:700;
+        font-size: 70%;    
+    }
+
+    .line1, .line2 {
+        font-size:80%;
+    }
+
+    /*menu horizontal*/
+
+    .lateral-menu{
+        padding-top:2%;
+        margin-top:0px;
+         width:100%;
+         height:5%;
+         background-color:black;
+         color:#bcbcbc;
+         font-family: 'Bitter', serif;
+         font-weight:700;
+         border-left:0px;
+         
+         
+    }
+    
+    
+    .menu-option1 {
+         margin-top:0%; 
+         display:inline-block; 
+         margin-left:25%; 
+         margin-right:1%;
+         width:80px;
+         height:20px;
+         
+         
+     }
+
+     .menu-option2 {
+        margin-top:0%; 
+        display:inline-block; 
+        margin-left:2%; 
+        width:50px;
+        height:20px;
+       padding-right:2%;
+    }
+     
+     
+    
+     .title-menu1, .title-menu2{
+        color: white;
+        font-size:70%;
+        
+     }
+
+     .title-menu2 {
+        
+        margin-left:1%;
+     }
+
   
+    
+   
+
+/*body*/
+
+
+#seccion-alumnas, #seccion-general {
+    padding-top:20%;
+    width:100%;
+    color: black;
+    margin-left: 20px;
+    
+ }
+ .title-alumnas, .title-general{  /*palabra general*/  /*palabra alumnas*/
+     padding-top: 1%;
+     padding-left: 2%;
+     font-size: 13px;
+     color: black;
+ }
+
+ .featured-photo-1{  /*alumnas imagen*/
+    background-image: url("http://www.color-hex.com/palettes/33778.png");
+    height: 25px;    
+}
+
+.featured-photo-2{ /*general imagen*/
+    background-image: url("http://www.color-hex.com/palettes/33778.png");
+    height: 25px;     
+ }
+
+ 
+ 
+/*  tabla */
+
+ 
+th {                                                      /*apartados de la tabla*/ 
+    font-size: 70%;    
+    width: 40%;
+    font-weight: normal;    
+    padding: 0.5%;    
+    background-color : rgb(255, 229 , 33);;
+      
+    border-bottom: 5px solid #fff; 
+    padding-right: 10px;
+    padding-left: 10px;
+    font-family: 'Bitter', serif;
+     font-weight:700;
+}
+
+.listado {
+    font-size: 80%;
+
+}
+
+
+
+.scroll {
+    overflow: scroll;
+    width: 88%;
+    height:330px;
+}
+
+.select1, .select2, .select3, {
+    font-size:30px;
+}
+
+/* GENERAL */
+
+.general-block1, .general-block2, .general-block3{
+    margin-top: 35px;
+    width: 60%;
+    background:rgb(232, 229, 229);
+    padding: 20px;
+    text-align: center;
+    height: 200px;
+    display:inline;
+    font-size: 13px;
+    display:block;
+}
+    .general-block1 {
+          
+    margin-left: 5%;
+    }
+
+    .general-block2{
+     margin-left: 6%;  
+    
+     
+    }
+    
+    .general-block3{ 
+    margin-left: 6%;     
+   
+    }
+
+    
+    .block1-info, .block2-info, .block3-info {
+        font-family: 'Bitter', serif;
+        font-weight: 700;
+        font-size: 30px;
+        color:black;
+        
+        
+    }
+ 
+
+    
+ 
+

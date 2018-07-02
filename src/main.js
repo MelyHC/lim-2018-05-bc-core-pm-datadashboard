@@ -127,7 +127,7 @@ else
                 output += '<td id= "nombrestabla">' + users[i].name + '</td>';
                 if (myProgress.hasOwnProperty(users[i].id)) {
                   const progressUser = myProgress[users[i].id];
-                  //console.log(progressUser);
+                  console.log(progressUser);
                   const courses = Object.keys(progressUser);
                   //console.log(courses);
                   courses.forEach((course)=>{
