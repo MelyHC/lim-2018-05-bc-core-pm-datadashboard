@@ -16,23 +16,17 @@ al.addEventListener("click", () => {
 });
 
 
-
-
-
 //Función y condiciones para usuario y contraseña de inicio.html
-function validar()
-{
-const usuario = document.getElementById("usuario").value;
-const contraseña = document.getElementById("contraseña").value;
+function validar() {
+  const usuario = document.getElementById("usuario").value;
+  const contraseña = document.getElementById("contraseña").value;
 
-if(usuario== "alejandralima" && contraseña == "12345")
-{
-  location.href ="http://127.0.0.1:5500/src/index.html";       //propiedad para direccionar a un link
-}
-else
-{
-  alert("Usuario y/o contraseña inválidos. Por favor verifique sus datos.");
-}
+  if (usuario == "alejandralima" && contraseña == "12345") {
+    location.href = "../src/index.html";       //propiedad para direccionar a un link
+  }
+  else {
+    alert("Usuario y/o contraseña inválidos. Por favor verifique sus datos.");
+  }
 }
 
 const chooseCountry = document.getElementById("country");
@@ -67,12 +61,14 @@ chooseCohort.addEventListener('change', () => {
     .then((response) => response.json())
     .then((users) => {
       let output = '';
-      
+
       output += '<tr>';
       output += '<th> Nombres </th>';
       output += '<th> General % </th>';
       output += '<th> Ejercicios % </th>';
       output += '<th> Quiz % </th>';
+      output += '<th> Score Quiz </th>';
+      output += '<th> Promedio Quiz </th>';
       output += '<th> Lecturas % </th>';
       output += '</tr>'
 
@@ -88,53 +84,71 @@ chooseCohort.addEventListener('change', () => {
                 //console.log(progressUser);
                 const courses = Object.keys(progressUser);
                 //console.log(courses);
-                courses.forEach((course)=>{
-                 //console.log(course);
-                  const courseElements = Object.keys(progressUser[course]);
-                  //console.log(courseElements);
-                  courseElements.forEach((element)=>{
-                    let percent = progressUser[course].percent;
-                    output += '<td id= "nombrestabla">' + percent + '</td>'
-                    //console.log(progressUser[course].units);
+                if (courses.length !== 0) {
+                  let scorePercent = 0;
+                  let contadorTotalQuizzes = 0;
+                  let contadorActualQuizzes = 0;
+                  let contadorTotalReads = 0;
+                  let contadorActualReads = 0;
+                  let contadorTotalExercises = 0;
+                  let contadorActualExercises = 0;
+                  let contadorScoreSum = 0;
+                  courses.forEach((course) => {
+                    scorePercent = progressUser[course].percent;
+                    //console.log(element);
                     const subject = Object.keys(progressUser[course].units);
                     //console.log(Object.keys(progressUser[course].units));
-                    subject.forEach((elementSubject)=>{
-                        //console.log(progressUser[course].units[elementSubject].parts);
-                        let contadorTotalQuizzes = 0;
-                        let contadorActualQuizzes = 0;
-                        let contadorTotalReads = 0;
-                        let contadorActualReads = 0;
-                        for (let part in progressUser[course].units[elementSubject].parts){
-                          //console.log(part);
-                          if (progressUser[course].units[elementSubject].parts[part].type==='practice' && progressUser[course].units[elementSubject].parts[part].hasOwnProperty("exercises")) {
-                             //console.log(progressUser[course].units[elementSubject].parts[part].completed)
-                             let completExercises = progressUser[course].units[elementSubject].parts[part].completed
-                             let percentExercises = completExercises*100
-                             output += '<td id= "nombrestabla">' + percentExercises + '</td>'
-                            }
-                          if (progressUser[course].units[elementSubject].parts[part].type=== 'quiz'){
-                             let completQuizzes= progressUser[course].units[elementSubject].parts[part].completed
-                            contadorTotalQuizzes++;
-                            console.log(contadorTotalQuizzes);
-                            //console.log(progressUser[course].units[elementSubject].parts[part].completed)                            
-                              
-                             // console.log(part);
-                               if(progressUser[course].units[elementSubject].parts[part].completed !== 0 && progressUser[course].units[elementSubject].parts[part].exercises){
-                                 contadorActualExercises++;
-                              // }
-                          } 
-                          
+                    subject.forEach((elementSubject) => {
+                      const unitsElements = progressUser[course].units[elementSubject].parts
+
+                      for (let part in unitsElements) {
+                        console.log(part);
+                        if (unitsElements[part].type === 'read') {
+                          contadorTotalReads++;
+                          if (unitsElements[part].completed === 1) {
+                            contadorActualReads++;
                           }
-                      //console.log(contadorTotalReads);
-                     // console.log(contadorActualReads);
-                      //console.log(contadorActualExercises);
-                    }})
-                  })
-                })
+                          // }
+                        }
+                        if (unitsElements[part].type === 'practice' && unitsElements[part].hasOwnProperty("exercises")) {
+                          //console.log(progressUser[course].units[elementSubject].parts[part].completed)
+                          contadorActualExercises = unitsElements[part].completed;
+                          const arrContadorExercises = Object.keys(unitsElements[part].exercises);
+                          contadorTotalExercises = arrContadorExercises.length
+                        }
+                        if (unitsElements[part].type === 'quiz') {
+                          contadorTotalQuizzes++;
+                          if (unitsElements[part].completed === 1 && unitsElements[part].hasOwnProperty("score")) {
+                            contadorActualQuizzes++;
+                            contadorScoreSum += unitsElements[part].score;
+                          }
+
+                          //console.log(progressUser[course].units[elementSubject].parts[part].completed)                            
+                        }
+                      }
+                    })
+                  })   
+                  output += '<td>' + scorePercent + '</td>'
+                  output += '<td>' + contadorActualExercises * 100 + '</td>';
+                  output += '<td>' + parseInt(contadorActualQuizzes * 100 / contadorTotalQuizzes) + '</td>';
+                  output += '<td>' + contadorScoreSum + '</td>';
+                  output += '<td>' + parseInt(contadorScoreSum / contadorTotalQuizzes) + '</td>';
+                  output += '<td>' + parseInt(contadorActualReads * 100 / contadorTotalReads) + '</td>';
+                  output += '</tr>';
+                } else {
+                  output += '<td>-</td>';
+                  output += '<td>-</td>';
+                  output += '<td>-</td>';
+                  output += '<td>-</td>';
+                  output += '<td>-</td>';
+                  output += '<td>-</td>';
+                  output += '</tr>';
+                }
+
               }
             }
           }
           nombreUsuarios.innerHTML = output;
         })
-    })      
+    })
 })
