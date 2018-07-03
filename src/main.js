@@ -39,31 +39,32 @@ let userId = '';
 let userName = '';
 
 
-chooseCountry.addEventListener("change", () => {
-  fetch('../data/cohorts.json')
+chooseCountry.addEventListener("change", () => {                 //hacemos una funcion para agrupar por paises la lista de cohorts 
+  fetch('../data/cohorts.json')                                  //realizamos un fetch para obtener los datos de COHORTS.JSON
     .then((response) => response.json())
-    .then((myCohorts) => {
-      let output = '';
+    .then((myCohorts) => {                                       //En myCohorts estan todos los cohorts {}
+      let output = '';                                           //en output aparece la información 
+    
 
-      for (nameCohort of myCohorts) {
-        const cohortsIds = nameCohort.id;
-        const splitCohort = cohortsIds.split('-');
-        if (splitCohort[0] === chooseCountry.value) {
-          output += '<option value="' + cohortsIds + '">' + cohortsIds + '</option>';
+      for (nameCohort of myCohorts) {                           // hacemos un for of para obtener el nombre del cohort de la lista de cohorts
+        const cohortsIds = nameCohort.id;                       //creamos una nueva variable para almacenar el nombre del cohort que sera .id
+        const splitCohort = cohortsIds.split('-');              //creamos una variable y la almacenamos con el resultado de la variable anterior y le colocamos .split para que coinciden los valores, será separado por el -
+        if (splitCohort[0] === chooseCountry.value) {           //creamos una condicion, el valor del html debe coincidir con la posicion 0 del string separada por -
+          output += '<option value="' + cohortsIds + '">' + cohortsIds + '</option>';       //
         }
       }
-      chooseCohort.innerHTML = output;
+      chooseCohort.innerHTML = output;                                                     //
     })
 })
 
-chooseCohort.addEventListener('change', () => {
-  fetch('../data/cohorts/' + chooseCohort.value + '/users.json')
+chooseCohort.addEventListener('change', () => {                           //creamos una funcion para obtener          
+  fetch('../data/cohorts/' + chooseCohort.value + '/users.json')          //realizamos un fetch para obtener los datos de USERS.JSON   //
     .then((response) => response.json())
-    .then((users) => {
-      let output = '';
+    .then((users) => {                                                   //obtenemos a los usuarios {}                                       
+      let output = '';                                                   //en output aparece la información de usuarios
 
-      output += '<tr>';
-      output += '<th> Nombres </th>';
+      output += '<tr>';                                                  // creamos una tabla 
+      output += '<th> Nombres </th>';                                    //+=
       output += '<th> General % </th>';
       output += '<th> Ejercicios % </th>';
       output += '<th> Quiz % </th>';
@@ -72,13 +73,13 @@ chooseCohort.addEventListener('change', () => {
       output += '<th> Lecturas % </th>';
       output += '</tr>'
 
-      fetch('../data/cohorts/' + chooseCohort.value + '/progress.json')
+      fetch('../data/cohorts/' + chooseCohort.value + '/progress.json')   // 
         .then((response) => response.json())
-        .then((myProgress) => {
-          for (i = 0; i < users.length; i++) {
-            if (users[i].role === "student") {
+        .then((myProgress) => {                                           //obtenemos el progreso de las estudiantes
+          for (i = 0; i < users.length; i++) {                            //hacemos un recorrido de los usuarios                             
+            if (users[i].role === "student") {                            // creamos una condicion para obtener a los que tienen role student   //
               output += '<tr>';
-              output += '<td id= "nombrestabla">' + users[i].name + '</td>';
+              output += '<td id= "nombrestabla">' + users[i].name + '</td>';   
               if (myProgress.hasOwnProperty(users[i].id)) {
                 const progressUser = myProgress[users[i].id];
                 //console.log(progressUser);
@@ -102,7 +103,7 @@ chooseCohort.addEventListener('change', () => {
                       const unitsElements = progressUser[course].units[elementSubject].parts
 
                       for (let part in unitsElements) {
-                        console.log(part);
+                        //console.log(part);
                         if (unitsElements[part].type === 'read') {
                           contadorTotalReads++;
                           if (unitsElements[part].completed === 1) {
