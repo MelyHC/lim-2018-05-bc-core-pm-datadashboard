@@ -39,9 +39,7 @@ window.computeUsersStats = (users, progress, courses) => {
               if (part.completed === 1 && part.hasOwnProperty("score")) {
                 contadorActualQuizzes++;
                 contadorScoreSum += part.score;
-              }
-
-              //console.log(progressUser[course].units[elementSubject].parts[part].completed)                            
+              }                           
             }
           })
         })
@@ -132,18 +130,17 @@ window.sortUsers = (users, orderBy, orderDirection) => {
   return usersSort;
 }
 window.filterUsers = (users, search) => {
+  let usersFilter = users;
   if (search.length !== 0) {
-    search = search.tolowerCase();
-    return users.filter(user => user &&
-      user.name &&
-      user.name.tolowerCase().indexof(search) >= 0)
+    search = search.toLowerCase();
+    usersFilter = users.filter(user => user.name.toLowerCase().indexOf(search) >= 0)
   }
-  return users
+  return usersFilter;
 }
 window.processCohortData = (options) => {
   const coursesCohort = Object.keys(options.cohort.coursesIndex);
   const usersStats = computeUsersStats(options.cohortData.users, options.cohortData.progress, coursesCohort);
-  const orderUsers = sortUsers(usersStats, options.orderBy, options.orderDirection)
+  const orderUsers = sortUsers(usersStats, options.orderBy, options.orderDirection);
   const usersFilter = filterUsers(orderUsers, options.search);
   return usersFilter;
 }
