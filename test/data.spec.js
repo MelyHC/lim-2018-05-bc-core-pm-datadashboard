@@ -76,9 +76,35 @@ describe('data', () => {
   });
 
   describe('sortUsers(users, orderBy, orderDirection)', () => {
+    const usersOrder = fixtures.users;
+    it('debería retornar arreglo de usuarios ordenado por nombre ASC', () => {
+      const order = usersOrder.sort((a, b) => {
+        if (a.name > b.name) {
+          return 1;
+        }
+        if (a.name < b.name) {
+          return -1;
+        }
+        return 0;
+      });
+      const processed = sortUsers(usersOrder, 'name', 'ASC');
+      assert.deepEqual(order, processed);
+    });
 
-    it('debería retornar arreglo de usuarios ordenado por nombre ASC');
-    it('debería retornar arreglo de usuarios ordenado por nombre DESC');
+    it('debería retornar arreglo de usuarios ordenado por nombre DESC', () => {
+      const order = usersOrder.sort((a, b) => {
+        if (a.name < b.name) {
+          return 1;
+        }
+        if (a.name > b.name) {
+          return -1;
+        }
+        return 0;
+      });
+      const processed = sortUsers(usersOrder, 'name', 'ASC');
+      assert.deepEqual(order, processed);
+    }); 
+
     it('debería retornar arreglo de usuarios ordenado por porcentaje general ASC');
     it('debería retornar arreglo de usuarios ordenado por porcentaje general DESC');
     it('debería retornar arreglo de usuarios ordenado por ejercicios completados ASC');
@@ -93,8 +119,9 @@ describe('data', () => {
   });
 
   describe('filterUsers(users, filterBy)', () => {
-
+    // let userFilter = fixtures.users;
     it('debería retornar nuevo arreglo solo con usuarios con nombres que contengan string (case insensitive)');
+      // const search = 'Mely';
 
   });
 
