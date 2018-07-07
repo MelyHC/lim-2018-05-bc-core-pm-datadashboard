@@ -52,12 +52,12 @@
 <div class="cuerpo">
 
   <div id="seccion-alumnas">
-    <div  class="featured-photo-1">
+    <!-- div  class="featured-photo-1">
       <p class="title-alumnas"> Alumnas</p>
-    </div>
+    </div -->
     
     <select class="select1" id="country">
-      <option value="" disabled selected hidden>Escoge tu sede</option>
+      <option disabled selected hidden>Escoge tu sede</option>
       <option value="lim">Lima</option>
       <option value="cdmx">Ciudad de México</option>
       <option value="gdl">Guadalara</option>
@@ -65,19 +65,28 @@
       <option value="otros">Otros</option>
     </select>
     <select class="select2" id="cohort">
-      <option value="" disabled selected hidden>Escoge tu cohort</option>
+      <option disabled selected hidden>Escoge tu cohort</option>
+    </select>
+    <select class="select1" id="orderBy">
+      <option disabled selected hidden>Ordenar por:</option>
+      <option value="name">Nombre</option>
+      <option value="percent">% general</option>
+      <option value="percentExercises">% de ejercicios</option>
+      <option value="percentQuizzes">% quizzes</option>
+      <option value="scoreSum">Suma de quizzess</option>
+      <option value="scoreAvg">Promedio de quizzes</option>
+      <option value="percentReads">% de lecturas</option>
     </select>
     <select class="select3" id="order">
-      <option value="" disabled selected hidden>Ordenar por:</option>
-      <option value="" id="ascendente" >Ascendente</option>
+      <option disabled selected hidden>sentido</option>
+      <option value="ASC">Ascendente</option>
+      <option value="DESC">Descendente</option>
     </select>
+    <input class="select1" id="boxSearch" placeholder="Buscar">
     <div class="scroll">
       <table class="listado" id="nombre"></table>
-    </div>
-  
-   
+    </div> 
   </div>
-
 
   <div id="seccion-general">
     <div class="featured-photo-2">
@@ -93,11 +102,8 @@
       <span class="general-block3"> Total de quizzes
         <p class="block3-info">37% </p>
       </span>
-
-
-
-
     </div>
+
   </div>
 </div>
   <script src="data.js"></script>

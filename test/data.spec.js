@@ -53,12 +53,13 @@ describe('data', () => {
         });
       });
 
-      it('debería tener propiedad quizzes con valor {total: 3, completed: 2, percent: 67, scoreSum: 57, scoreAvg: 29}', () => {
+      it('debería tener propiedad quizzes con valor {total: 3, completed: 2, percent: 67, scoreSum: 57, scoreAvg: 19}', () => {
         assert.deepEqual(processed[0].stats.quizzes, {
           total: 3,
           completed: 2,
           percent: 67,
-          scoreAvg: 29,
+          scoreSum: 57,
+          scoreAvg: 19,
         });
       });
 
