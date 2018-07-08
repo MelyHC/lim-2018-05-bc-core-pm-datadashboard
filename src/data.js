@@ -39,7 +39,7 @@ window.computeUsersStats = (users, progress, courses) => {
               if (part.completed === 1 && part.hasOwnProperty("score")) {
                 contadorActualQuizzes++;
                 contadorScoreSum += part.score;
-              }                           
+              }
             }
           })
         })
@@ -92,43 +92,34 @@ window.computeUsersStats = (users, progress, courses) => {
 
 window.sortUsers = (users, orderBy, orderDirection) => {
   let usersSort = users;
-  if (orderBy.length !== 0) {
-    usersSort = users.sort((a, b) => {
-      if (orderBy === "name") {
-        let nameCompare = a.name.localeCompare(b.name);
-        return nameCompare;
-      } else if (orderBy === "percent") {
-        if (a.stats[orderBy] > b.stats[orderBy]) return 1;
-        if (a.stats[orderBy] < b.stats[orderBy]) return -1;
-        return 0;
-      } else if (orderBy === "percentExercises") {
-        if (a.stats.exercises.percent > b.stats.exercises.percent) return 1;
-        if (a.stats.exercises.percent < b.stats.exercises.percent) return -1;
-        return 0;
-      } else if (orderBy === "percentQuizzes") {
-        if (a.stats.quizzes.percent > b.stats.quizzes.percent) return 1;
-        if (a.stats.quizzes.percent < b.stats.quizzes.percent) return -1;
-        return 0;
-      } else if (orderBy === "scoreSum") {
-        if (a.stats.quizzes.scoreSum > b.stats.quizzes.scoreSum) return 1;
-        if (a.stats.quizzes.scoreSum < b.stats.quizzes.scoreSum) return -1;
-        return 0;
-      } else if (orderBy === "scoreAvg") {
-        if (a.stats.quizzes.scoreAvg > b.stats.quizzes.scoreAvg) return 1;
-        if (a.stats.quizzes.scoreAvg < b.stats.quizzes.scoreAvg) return -1;
-        return 0;
-      } else if (orderBy === "percentReads") {
-        if (a.stats.reads.percent > b.stats.reads.percent) return 1;
-        if (a.stats.reads.percent > b.stats.reads.percent) return -1;
-        return 0;
-      }
-    })
-  }
-  if (orderDirection === "DESC") {
-    usersSort = usersSort.reverse();
-  }
+  if (orderDirection.length !== 0) {
+    if (orderBy.length !== 0) {
+      usersSort = users.sort((a, b) => {
+        if (orderBy === "name") {
+          let nameCompare = a.name.localeCompare(b.name);
+          return nameCompare;
+        } else if (orderBy === "percent") {
+          if (a.stats[orderBy] > b.stats[orderBy]) return 1;
+          if (a.stats[orderBy] < b.stats[orderBy]) return -1;
+          return 0;
+        } else if (orderBy === "exercises" || orderBy === "quizzes" || orderBy === "reads") {
+          if (a.stats[orderBy].percent > b.stats[orderBy].percent) return 1;
+          if (a.stats.exercises.percent < b.stats[orderBy].percent) return -1;
+          return 0;
+        } else if (orderBy === "scoreSum" || orderBy === "scoreAvg") {
+          if (a.stats.quizzes[orderBy] > b.stats.quizzes[orderBy]) return 1;
+          if (a.stats.quizzes[orderBy] < b.stats.quizzes[orderBy]) return -1;
+          return 0;
+        }
+      })
+    }
+    if (orderDirection === "DESC") {
+      usersSort = usersSort.reverse();
+    }
+  }  
   return usersSort;
 }
+
 window.filterUsers = (users, search) => {
   let usersFilter = users;
   if (search.length !== 0) {
@@ -137,6 +128,7 @@ window.filterUsers = (users, search) => {
   }
   return usersFilter;
 }
+
 window.processCohortData = (options) => {
   const coursesCohort = Object.keys(options.cohort.coursesIndex);
   const usersStats = computeUsersStats(options.cohortData.users, options.cohortData.progress, coursesCohort);
