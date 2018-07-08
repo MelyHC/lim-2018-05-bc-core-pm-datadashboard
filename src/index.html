@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="style.css" />
     <link href="https://fonts.googleapis.com/css?family=Bitter:400,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,800">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
   </head>
   <body>
     <div class="header">
@@ -15,7 +16,7 @@
         <img class="profilePhoto" src="https://crisescobar.files.wordpress.com/2018/06/alejandra.png">
         <div class="sub-block">
           <span class="line1">¡Bienvenida!</span>
-          <select></select>
+          <i class="fas fa-angle-down"></i>
           <span class="line2">Alejandralima</span>
         </div>
       </div>
@@ -26,7 +27,8 @@
         <div class="logo1"></div>
         <span id="general">
           <a href="#">
-            <p class="title-menu1"> General</p>
+            <p class="title-menu1">
+              <i class="fas fa-home"> </i> General </p>
           </a>
         </span>
       </div>
@@ -35,20 +37,20 @@
         <div class="logo2"></div>
         <span id="alumnas">
           <a href="#">
-            <p class="title-menu2">Alumnas</p>
+            <p class="title-menu2">
+              <i class="fas fa-user"></i> Alumnas </p>
           </a>
         </span>
       </div>
     </div>
 
-    <div class="cuerpo">
-      <div id="seccion-alumnas">
-        <!-- div  class="featured-photo-1">
+    <div id="seccion-alumnas">
+      <div class="featured-photo">
         <p class="title-alumnas"> Alumnas</p>
-      </div -->
-
+      </div>
+      <p>
         <select class="select1" id="country">
-          <option disabled selected hidden>Escoge tu sede</option>
+          <option disabled selected hidden> Escoge tu sede </option>
           <option value="lim">Lima</option>
           <option value="cdmx">Ciudad de México</option>
           <option value="gdl">Guadalara</option>
@@ -58,7 +60,7 @@
         <select class="select2" id="cohort">
           <option disabled selected hidden>Escoge tu cohort</option>
         </select>
-        <select class="select1" id="orderBy">
+        <select class="select3" id="orderBy">
           <option disabled selected hidden>Ordenar por:</option>
           <option value="name">Nombre</option>
           <option value="percent">% general</option>
@@ -68,35 +70,36 @@
           <option value="scoreAvg">Promedio de quizzes</option>
           <option value="reads">% de lecturas</option>
         </select>
-        <select class="select3" id="order">
+        <select class="select4" id="order">
           <option disabled selected hidden>sentido</option>
           <option value="ASC">Ascendente</option>
           <option value="DESC">Descendente</option>
         </select>
-        <input class="select1" id="boxSearch" placeholder="Buscar">
-        <div class="scroll">
-          <table class="listado" id="nombre"></table>
-        </div>
-      </div>
-
-      <div id="seccion-general">
-        <div class="featured-photo-2">
-          <p class="title-general"> Promedios generales </p>
-        </div>
-        <div>
-          <span class="general-block1"> Cantidad de alumnas
-            <p class="block1-info">770 </p>
-          </span>
-          <span class="general-block2"> Total de ejercicios
-            <p class="block2-info">80% </p>
-          </span>
-          <span class="general-block3"> Total de quizzes
-            <p class="block3-info">37% </p>
-          </span>
-        </div>
+        <input class="search1" id="boxSearch" type="search" placeholder="Buscar...">
+      </p>
+      <div class="scroll">
+        <table class="listado" id="nombre"></table>
       </div>
     </div>
-    
+
+    <div id="seccion-general">
+      <div class="featured-photo">
+        <p class="title-general"> Promedios generales </p>
+      </div>
+      <div>
+        <span class="general-block1"> Cantidad de alumnas
+          <p class="block1-info">770 </p>
+        </span>
+        <span class="general-block2"> Total de ejercicios
+          <p class="block2-info">80% </p>
+        </span>
+        <span class="general-block3"> Total de quizzes
+          <p class="block3-info">37% </p>
+        </span>
+      </div>
+
+    </div>
+
     <script src="data.js"></script>
     <script src="main.js"></script>
   </body>
