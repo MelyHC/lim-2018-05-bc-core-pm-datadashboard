@@ -14,7 +14,6 @@ al.addEventListener("click", () => {
   document.getElementById("seccion-alumnas").style.display = 'inline-block';
   document.getElementById("seccion-general").style.display = 'none';
 });
-console.log(0 * 100 / 4)
 
 //Función y condiciones para usuario y contraseña de inicio.html
 validar = () => {
@@ -33,8 +32,8 @@ const chooseCountry = document.getElementById("country");
 const chooseCohort = document.getElementById("cohort");
 const nombreUsuarios = document.getElementById('nombre');
 const searchUser = document.getElementById('boxSearch');
-const studentsOrderBy= document.getElementById('orderBy');
-const studentsOrderDirection= document.getElementById('order');
+const studentsOrderBy = document.getElementById('orderBy');
+const studentsOrderDirection = document.getElementById('order');
 
 const options = {
   cohort: null,
@@ -45,6 +44,35 @@ const options = {
   orderBy: '',
   orderDirection: '',
   search: ''
+}
+
+printData = (arrForPrint) => {
+  let output = '';
+  output +=
+    `<tr>                                                  
+    <th> Nombres </th>                                  
+    <th> General % </th>
+    <th> Ejercicios % </th>
+    <th> Quiz % </th>
+    <th> Score Quiz </th>
+    <th> Promedio Quiz </th>
+    <th> Lecturas % </th>
+    </tr>`;
+  arrForPrint.forEach(students => {                       //hacemos un recorrido de los usuarios                             
+    if (students.role === "student") {
+      output +=
+        `<tr>
+        <td id= "nombrestabla">${students.name}</td>
+        <td>${students.stats.percent}</td> 
+        <td>${students.stats.exercises.percent}</td>
+        <td>${students.stats.quizzes.percent}</td>
+        <td>${students.stats.quizzes.scoreSum}</td>
+        <td>${students.stats.quizzes.scoreAvg}</td>
+        <td>${students.stats.reads.percent}</td>
+        </tr>`;
+    }
+  })
+  return output;
 }
 
 chooseCountry.addEventListener('change', () => {                 //hacemos una funcion para agrupar por paises la lista de cohorts 
@@ -72,109 +100,37 @@ chooseCohort.addEventListener('change', () => {                           //crea
       selectCohort.forEach(objectCohortSelect => {
         if (objectCohortSelect.id === chooseCohort.value) {
           options.cohort = objectCohortSelect;
-          console.log(options);
         }
       });
     })
   fetch(`../data/cohorts/${chooseCohort.value}/users.json`)          //realizamos un fetch para obtener los datos de USERS.JSON   //
     .then(response => response.json())
     .then(arrUsers => {                                                   //obtenemos a los usuarios {}                                       
-      let output = '';                                                   //en output aparece la información de usuarios
-      output += '<tr>';                                                  // creamos una tabla 
-      output += '<th> Nombres </th>';                                    //+=
-      output += '<th> General % </th>';
-      output += '<th> Ejercicios % </th>';
-      output += '<th> Quiz % </th>';
-      output += '<th> Score Quiz </th>';
-      output += '<th> Promedio Quiz </th>';
-      output += '<th> Lecturas % </th>';
-      output += '</tr>'
-
       fetch(`../data/cohorts/${chooseCohort.value}/progress.json`)   // 
         .then(response => response.json())
         .then(objectProgress => { //obtenemos el progreso de las estudiantes
           options.cohortData.users = arrUsers;
           options.cohortData.progress = objectProgress;
           let usersWithProgress = processCohortData(options);
-          //console.log(usersWithProgress);
-          usersWithProgress.forEach(students => {                       //hacemos un recorrido de los usuarios                             
-            if (students.role === 'student') {
-              output += '<tr>';
-              output += '<td id= "nombrestabla">' + students.name + '</td>';
-              output += '<td>' + students.stats.percent + '</td > ';
-              output += '<td>' + students.stats.exercises.percent + '</td>';
-              output += '<td>' + students.stats.quizzes.percent + '</td>';
-              output += '<td>' + students.stats.quizzes.scoreSum + '</td>';
-              output += '<td>' + students.stats.quizzes.scoreAvg + '</td>';
-              output += '<td>' + students.stats.reads.percent + '</td>';
-              output += '</tr>';
-
-            }
-          })
-          nombreUsuarios.innerHTML = output;
+          nombreUsuarios.innerHTML = printData(usersWithProgress);
         })
-    }) 
+    })
 })
-
-
 
 searchUser.addEventListener('keyup', () => {
   options.search = searchUser.value;
   let usersWithProgress = processCohortData(options);
-  let output3 = '';
-  output3 += '<tr>';                                                  // creamos una tabla 
-  output3 += '<th> Nombres </th>';                                    //+=
-  output3 += '<th> General % </th>';
-  output3 += '<th> Ejercicios % </th>';
-  output3 += '<th> Quiz % </th>';
-  output3 += '<th> Score Quiz </th>';
-  output3 += '<th> Promedio Quiz </th>';
-  output3 += '<th> Lecturas % </th>';
-  output3 += '</tr>'
-  usersWithProgress.forEach(students => {                       //hacemos un recorrido de los usuarios                             
-    if (students.stats) {
-      output3 += '<tr>';
-      output3 += '<td id= "nombrestabla">' + students.name + '</td>';
-      output3 += '<td>' + students.stats.percent + '</td > ';
-      output3 += '<td>' + students.stats.exercises.percent + '</td>';
-      output3 += '<td>' + students.stats.quizzes.percent + '</td>';
-      output3 += '<td>' + students.stats.quizzes.scoreSum + '</td>';
-      output3 += '<td>' + students.stats.quizzes.scoreAvg + '</td>';
-      output3 += '<td>' + students.stats.reads.percent + '</td>';
-      output3 += '</tr>';
-    }
-  })
-  nombreUsuarios.innerHTML = output3;
+  nombreUsuarios.innerHTML = printData(usersWithProgress);
 })
 
-studentsOrderBy.addEventListener('change', ()=>{
-    studentsOrderDirection.addEventListener('change', ()=>{
-      options.orderBy=studentsOrderBy.value;
-      options.orderDirection=studentsOrderDirection.value;
-      let usersWithProgress = processCohortData(options);
-      let output3 = '';
-      output3 += '<tr>';                                                  // creamos una tabla 
-      output3 += '<th> Nombres </th>';                                    //+=
-      output3 += '<th> General % </th>';
-      output3 += '<th> Ejercicios % </th>';
-      output3 += '<th> Quiz % </th>';
-      output3 += '<th> Score Quiz </th>';
-      output3 += '<th> Promedio Quiz </th>';
-      output3 += '<th> Lecturas % </th>';
-      output3 += '</tr>'
-      usersWithProgress.forEach(students => {                       //hacemos un recorrido de los usuarios                             
-        if (students.stats) {
-          output3 += '<tr>';
-          output3 += '<td id= "nombrestabla">' + students.name + '</td>';
-          output3 += '<td>' + students.stats.percent + '</td > ';
-          output3 += '<td>' + students.stats.exercises.percent + '</td>';
-          output3 += '<td>' + students.stats.quizzes.percent + '</td>';
-          output3 += '<td>' + students.stats.quizzes.scoreSum + '</td>';
-          output3 += '<td>' + students.stats.quizzes.scoreAvg + '</td>';
-          output3 += '<td>' + students.stats.reads.percent + '</td>';
-          output3 += '</tr>';
-        }
-      })
-      nombreUsuarios.innerHTML = output3;
-    })
+studentsOrderBy.addEventListener('change', () => {
+  options.orderBy = studentsOrderBy.value;
+  let usersWithProgress = processCohortData(options);
+  nombreUsuarios.innerHTML = printData(usersWithProgress);
+})
+
+studentsOrderDirection.addEventListener('change', () => {
+  options.orderDirection = studentsOrderDirection.value;
+  let usersWithProgress = processCohortData(options);
+  nombreUsuarios.innerHTML = printData(usersWithProgress);
 })
