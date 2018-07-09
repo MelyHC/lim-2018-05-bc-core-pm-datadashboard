@@ -199,10 +199,10 @@ describe('data', () => {
     });
     it('debería retornar arreglo de usuarios ordenado por score promedio en quizzes completados DESC', () => {
       const order = usersOrder.sort((a, b) => {
-        if (a.stats.quizzes.scoreAvg  < b.stats.quizzes.scoreAvg ) {
+        if (a.stats.quizzes.scoreAvg < b.stats.quizzes.scoreAvg) {
           return 1;
         }
-        if (a.stats.quizzes.scoreAvg  > b.stats.quizzes.scoreAvg ) {
+        if (a.stats.quizzes.scoreAvg > b.stats.quizzes.scoreAvg) {
           return -1;
         }
         return 0;
@@ -210,6 +210,7 @@ describe('data', () => {
       const processed = sortUsers(usersOrder, 'scoreAvg', 'DESC');
       assert.deepEqual(order, processed);
     });
+    
     it('debería retornar arreglo de usuarios ordenado por lecturas (reads) completadas ASC', () => {
       const order = usersOrder.sort((a, b) => {
         if (a.stats.reads.percent > b.stats.reads.percent) {
@@ -301,7 +302,7 @@ describe('data', () => {
         }
       }
       ];
-    
+
       const processed = filterUsers(userFilter, 'yanina');
       assert.deepEqual(userData, processed);
     });
@@ -313,36 +314,8 @@ describe('data', () => {
     let progressCohort = fixtures.progress;
     it('debería retornar arreglo de usuarios con propiedad stats y aplicar sort y filter', () => {
       // let cohortSelect = fixtures.cohorts.filter(cohort => cohort.id == 'lim-2018-03-pre-core-pw');
-      
+
       let userData = [{
-        id: "0B5g5B7K9eWm7CGiyhM3ArTawzA2",
-        name: "Roxana Faviola Flores Amarillo",
-        locale: "es-PE",
-        signupCohort: "lim-2018-03-pre-core-pw",
-        timezone: "America/Lima",
-        role: "student",
-        stats: {
-          percent: 100,
-          exercises: {
-            total: 2,
-            completed: 1,
-            percent: 100
-          },
-          reads: {
-            total: 11,
-            completed: 11,
-            percent: 100
-          },
-          quizzes: {
-            total: 3,
-            completed: 3,
-            percent: 100,
-            scoreSum: 215,
-            scoreAvg: 72
-          }
-        }
-      },
-      {
         id: "nU8iAFoem8Oru5I3MzrfvMxXeuv2",
         timezone: "America/Lima",
         name: "Roxana",
@@ -369,9 +342,38 @@ describe('data', () => {
             scoreAvg: 84
           }
         }
-      }];
+      },
+      {
+        id: "0B5g5B7K9eWm7CGiyhM3ArTawzA2",
+        name: "Roxana Faviola Flores Amarillo",
+        locale: "es-PE",
+        signupCohort: "lim-2018-03-pre-core-pw",
+        timezone: "America/Lima",
+        role: "student",
+        stats: {
+          percent: 100,
+          exercises: {
+            total: 2,
+            completed: 1,
+            percent: 100
+          },
+          reads: {
+            total: 11,
+            completed: 11,
+            percent: 100
+          },
+          quizzes: {
+            total: 3,
+            completed: 3,
+            percent: 100,
+            scoreSum: 215,
+            scoreAvg: 72
+          }
+        }
+      }
+      ];
       const optionsCohort = {
-        cohort: courses,
+        cohort: cohort,
         cohortData: {
           users: userCohort,
           progress: progressCohort
@@ -385,5 +387,5 @@ describe('data', () => {
     });
   });
 
-  });
+});
 
