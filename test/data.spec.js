@@ -103,26 +103,217 @@ describe('data', () => {
       });
       const processed = sortUsers(usersOrder, 'name', 'ASC');
       assert.deepEqual(order, processed);
-    }); 
+    });
 
-    it('debería retornar arreglo de usuarios ordenado por porcentaje general ASC');
-    it('debería retornar arreglo de usuarios ordenado por porcentaje general DESC');
-    it('debería retornar arreglo de usuarios ordenado por ejercicios completados ASC');
-    it('debería retornar arreglo de usuarios ordenado por ejercicios completados DESC');
-    it('debería retornar arreglo de usuarios ordenado por quizzes completados ASC');
-    it('debería retornar arreglo de usuarios ordenado por quizzes completados DESC');
-    it('debería retornar arreglo de usuarios ordenado por score promedio en quizzes completados ASC');
-    it('debería retornar arreglo de usuarios ordenado por score promedio en quizzes completados DESC');
-    it('debería retornar arreglo de usuarios ordenado por lecturas (reads) completadas ASC');
-    it('debería retornar arreglo de usuarios ordenado por lecturas (reads) completadas DESC');
+    it('debería retornar arreglo de usuarios ordenado por porcentaje general ASC', () => {
+      const order = usersOrder.sort((a, b) => {
+        if (a.percent > b.percent) {
+          return 1;
+        }
+        if (a.percent < b.percent) {
+          return -1;
+        }
+        return 0;
+      });
+      const processed = sortUsers(usersOrder, 'percent', 'ASC');
+      assert.deepEqual(order, processed);
+    });
+
+    it('debería retornar arreglo de usuarios ordenado por porcentaje general DESC', () => {
+      const order = usersOrder.sort((a, b) => {
+        if (a.percent < b.percent) {
+          return 1;
+        }
+        if (a.percent > b.percent) {
+          return -1;
+        }
+        return 0;
+      });
+      const processed = sortUsers(usersOrder, 'percent', 'DESC');
+      assert.deepEqual(order, processed);
+    });
+    it('debería retornar arreglo de usuarios ordenado por ejercicios completados ASC', () => {
+      const order = usersOrder.sort((a, b) => {
+        if (a.percentExercises > b.percentExercises) {
+          return 1;
+        }
+        if (a.percentExercises < b.percentExercises) {
+          return -1;
+        }
+        return 0;
+      });
+      const processed = sortUsers(usersOrder, 'percentExercises', 'ASC');
+      assert.deepEqual(order, processed);
+    });
+    it('debería retornar arreglo de usuarios ordenado por ejercicios completados DESC', () => {
+      const order = usersOrder.sort((a, b) => {
+        if (a.percentExercises < b.percentExercises) {
+          return 1;
+        }
+        if (a.percentExercises > b.percentExercises) {
+          return -1;
+        }
+        return 0;
+      });
+      const processed = sortUsers(usersOrder, 'percentExercises', 'DESC');
+      assert.deepEqual(order, processed);
+    });
+    it('debería retornar arreglo de usuarios ordenado por quizzes completados ASC', () => {
+      const order = usersOrder.sort((a, b) => {
+        if (a.percentQuizzes > b.percentQuizzes) {
+          return 1;
+        }
+        if (a.percentQuizzes < b.percentQuizzes) {
+          return -1;
+        }
+        return 0;
+      });
+      const processed = sortUsers(usersOrder, 'percentQuizzes', 'ASC');
+      assert.deepEqual(order, processed);
+    });
+    it('debería retornar arreglo de usuarios ordenado por quizzes completados DESC', () => {
+      const order = usersOrder.sort((a, b) => {
+        if (a.percentQuizzes < b.percentQuizzes) {
+          return 1;
+        }
+        if (a.percentQuizzes > b.percentQuizzes) {
+          return -1;
+        }
+        return 0;
+      });
+      const processed = sortUsers(usersOrder, 'percentQuizzes', 'DESC');
+      assert.deepEqual(order, processed);
+    });
+    it('debería retornar arreglo de usuarios ordenado por score promedio en quizzes completados ASC', () => {
+      const order = usersOrder.sort((a, b) => {
+        if (a.scoreSum > b.scoreSum) {
+          return 1;
+        }
+        if (a.scoreSum < b.scoreSum) {
+          return -1;
+        }
+        return 0;
+      });
+      const processed = sortUsers(usersOrder, 'scoreSum', 'ASC');
+      assert.deepEqual(order, processed);
+    });
+    it('debería retornar arreglo de usuarios ordenado por score promedio en quizzes completados DESC', () => {
+      const order = usersOrder.sort((a, b) => {
+        if (a.scoreSum < b.scoreSum) {
+          return 1;
+        }
+        if (a.scoreSum > b.scoreSum) {
+          return -1;
+        }
+        return 0;
+      });
+      const processed = sortUsers(usersOrder, 'scoreSum', 'DESC');
+      assert.deepEqual(order, processed);
+    });
+    it('debería retornar arreglo de usuarios ordenado por lecturas (reads) completadas ASC', () => {
+      const order = usersOrder.sort((a, b) => {
+        if (a.percentReads > b.percentReads) {
+          return 1;
+        }
+        if (a.percentReads < b.percentReads) {
+          return -1;
+        }
+        return 0;
+      });
+      const processed = sortUsers(usersOrder, 'percentReads', 'ASC');
+      assert.deepEqual(order, processed);
+    });
+    it('debería retornar arreglo de usuarios ordenado por lecturas (reads) completadas DESC', () => {
+      const order = usersOrder.sort((a, b) => {
+        if (a.percentReads < b.percentReads) {
+          return 1;
+        }
+        if (a.percentReads > b.percentReads) {
+          return -1;
+        }
+        return 0;
+      });
+      const processed = sortUsers(usersOrder, 'percentReads', 'ASC');
+      assert.deepEqual(order, processed);
+    });
 
   });
 
   describe('filterUsers(users, filterBy)', () => {
     // let userFilter = fixtures.users;
-    it('debería retornar nuevo arreglo solo con usuarios con nombres que contengan string (case insensitive)');
-      // const search = 'Mely';
+    it('debería retornar nuevo arreglo solo con usuarios con nombres que contengan string', ()=>{
+    let cohort = fixtures.cohorts.filter(cohort => cohort.id == 'lim-2018-03-pre-core-pw');
+    const { users, progress } = fixtures;
+    let userData = [{
+      id: "4Lf0NYN3ehYTPpjGwzsNeq0rRfe2",
+      name: "Yanina",
+      locale: "es-ES",
+      signupCohort: "lim-2018-03-pre-core-pw",
+      timezone: "America/Lima",
+      role: "student",
+      stats: {
+        percent: 100,
+        exercises: {
+          total: 2,
+          completed: 2,
+          percent: 100
+        },
+        reads: {
+          total: 11,
+          completed: 11,
+          percent: 100
+        },
+        quizzes: {
+          total: 3,
+          completed: 3,
+          percent: 100,
+          scoreSum: 284,
+          scoreAvg: 95
+        }
+      }
+    },
+    {
+    id: "kcA7dfO7JcY3fK4WIyZNbVaXRsY2",
+    timezone: "America/Lima",
+    name: "Yanina CC",
+    locale: "es-PE",
+    signupCohort: "lim-2018-03-pre-core-pw",
+    role: "student",
+    stats: {
+      percent: 100,
+      exercises: {
+        total: 2,
+        completed: 100,
+        percent: 100
+      },
+      reads: {
+        total: 11,
+        completed: 100,
+        percent: 100
+      },
+      quizzes: {
+        total: 3,
+        completed: 100,
+        percent: 100,
+        scoreSum: 274,
+        scoreAvg: 91
+      }
+    }  
+  } 
+  ];
+    let options = {
+      cohort: cohort,
+      cohortData: {
+        users: users,
+        progress: progress
+      },
+      orderBy: 'name',
+      orderDirection: 'ASC',
+      search: 'yanina'
+    };
 
+    const processed = processCohortData(options);
+    assert.deepEqual(userData, processed);
   });
 
   describe('processCohortData({ cohortData, orderBy, orderDirection, filterBy })', () => {
@@ -131,4 +322,5 @@ describe('data', () => {
 
   });
 
-});
+})
+})
