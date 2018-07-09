@@ -40,7 +40,7 @@ Este sketch nos dio una guía de cuál sería el flujo de la información del da
 
 Continuando con el proceso de diseño, elaboramos un prototipo de alta fidelidad en FIGMA, para poder darnos una guía de como sería el diseño, se puede ver en este link: https://www.figma.com/file/Qs0GExH5hp2NUxbnVrbgJ4wT/GENERAL
 
-Luego, comenzamos a aplicarlo a nuestra interfaz principal que incluye todos los requerimientos, la cual incluye 4 selectores en la sección de alumnas:
+Luego, comenzamos a aplicarlo a nuestra interfaz principal que incluye todos los requerimientos. Implementamos 4 selectores en la sección de alumnas:
 .El primero contendrá la lista de sedes de laboratoria categorizada por países.
 .El segundo tendrá la lista de cohorts de la sede elegida en el paso anterior.Este ultimo permitira la visualizacion de una tabla con los nombres de todas las alumnas de la sede y el cohort seleccionado; contendrá informacion de completitud: general, exercises, quizzes y reads; tambien de score de quizzes: promedio y total.
 .El tercer selector tendrá opciones de ordenado: por alumnas; completitud: general, exercises, quizzes y reads; tambien de score de quizzes: promedio y total.
