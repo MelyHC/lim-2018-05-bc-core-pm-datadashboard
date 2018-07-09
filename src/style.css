@@ -64,7 +64,7 @@ h2 {
 /* head */
    
 .header{
-    margin-right:0%;
+    margin-right:-150px;
     background-color: rgb(255, 229 , 33);
     padding-top: 2%;
     padding-left: 1%;
@@ -74,16 +74,16 @@ h2 {
 }
 
 .logo {                   
-    width:18%;
+    width:20%;
     padding-left: 1%; 
 }
 
 .block-header {
-    padding-left: 61.5%;
+    padding-left: 50%;
 }
 
 .profilePhoto {
-    width:30px;
+    width:40px;
     border-radius:20px;  
 }
 
@@ -95,7 +95,7 @@ h2 {
     display: inline;
     font-family: 'Bitter', serif;
     font-weight:700;
-    font-size: 85%;    
+    font-size: 16px;    
 }
 
 .line2 {
@@ -146,7 +146,7 @@ h2 {
     padding-left:2%;
 }
 
-.title-alumnas, .title-general {  /*palabra general*/  /*palabra alumnas*/
+.title-alumnas, .title-general {  
     padding-top: 1%;
     padding-left: 2%;
     font-size: 25px;
@@ -155,7 +155,7 @@ h2 {
     font-weight:700;
 }
 
-.featured-photo {  /*alumnas imagen*/
+.featured-photo {  
     margin: 1% 0% 0% 0%;
     height: 150px;    
     background-image: url(https://crisescobar.files.wordpress.com/2018/06/hackathon-1-prueba1-e1529960874489.jpg);
@@ -182,41 +182,56 @@ a {
     text-decoration:none;
 }
 
-tr {                                                      /*texto de la tabla centrado*/
+tr {                                                      
     text-align: center;  
 }
  
-#nombrestabla {                                           /*nombres de las alumnas a la izquierda*/
+#nombrestabla {                                           
     text-align: left;      
 }
 
 .select1, .select2 {             
     color: black; 
-    background-color: rgb(255, 229 , 33);     
-    border: none;                                  /*color del selector*/
-    margin: 2%;   
+    background-color: rgb(255, 229, 33);     
+    border: none;                               
+    margin-top: 2%;   
+    margin-bottom:0px;
     margin-left: 0%;
-    padding-left: 5px;                                         /*posicion del selector en la web*/
+    padding-left: 5px;                                         
     font-family: 'Bitter', serif;
+    font-weight:700;
+    width: 30%;
+    border-radius: 5px;
 }
 
 .select3, .select4, .search1 {
-    color: black;                                           /*color del selector*/
+    color: black;     
+    border:none;                                    
     margin: 2%;   
     margin-left: 0%;
-    padding-left: 5px;                                         /*posicion del selector en la web*/
-    border-radius: 10px;
+    background-color: #f3f3f3;
+    padding-left: 5px;                                         
+    border-radius: 5px;
     font-family: 'Bitter', serif;
 }
- 
-th {                                                      /*apartados de la tabla*/ 
-    font-size: 100%;    
-    width: 40%;
+
+option {
+    background-color:white;
+}
+
+.search1 {
+    width: 250px;
+    font-weight:700;
+    height:25px;
+}
+
+th {                                                       
+       
+    width: 15%;
     font-weight: normal;    
     padding: 0.5%;    
-    background: rgb(37, 37, 37);
-    color: white;
-    border-top: 4px, solid, rgb(242, 217, 30);   
+    background: rgb(86, 248, 154);
+
     border-bottom: 5px solid #fff; 
     padding-right: 15px;
     padding-left: 15px;
@@ -224,7 +239,7 @@ th {                                                      /*apartados de la tabl
     font-weight:700;
 }
 
-.listado {                                               /*posicion de la tabla en la web*/ 
+.listado {                                               
     margin-left: 0%;  
 }
 
@@ -245,53 +260,62 @@ tr:hover td {
 
 .scroll {
     overflow: scroll;
-    width: 88%;
+    width: 85%;
     height:330px;
 }
 
 /* GENERAL */
 
+.general-photo {
+    width: 20%;
+}
+
+.general-info {
+    font-family: 'Bitter', serif;
+    font-size: 17px;
+}
+
+.general-title {
+    font-family: 'Bitter', serif;
+    font-weight: 700;
+    font-size: 60px;    
+    margin-top: 5%;
+    color:fuchsia;
+    font-size: 50px;  
+}
+.general-photo2 {
+    width: 40%;
+    position:absolute;
+    padding-left:40%;
+}
 .general-block1, .general-block2, .general-block3{
     float: left;
-    width: 20%;
+    margin-top:40px;
+    width: 15%;
     background:rgb(243, 243, 243);
     padding: 20px;
     text-align: center;
-    height: 200px;
+    height: 120px;
     display:inline;
     font-family: 'Bitter', serif;
     color:black;   
     font-weight: 700;
 }
 
-.general-block1 {
-    margin-left: 1%;
-}
+
 
 .general-block2{
-    margin-left: 8%;        
+    margin-left: 3%;        
 }
     
 .general-block3{ 
-    margin-left: 9%;       
-}
-  
-.block1-info, .block2-info, .block3-info {
-    font-family: 'Bitter', serif;
-    font-weight: 700;
-    font-size: 60px;     
-}
-    
-.block1-info {
-    color:rgb(242, 217, 30); 
-}
-    
-.block2-info {
-    color:rgb(86, 248, 154);
+    margin-left: 3%;       
 }
 
-.block3-info {
-    color:fuchsia;
+.block1-info, .block2-info , .block3-info {
+    font-size: 400%;
+    color:rgb(255, 229 , 33);
+
 }
 
 @media screen and (min-width: 480px) and (max-width: 798px) {
@@ -299,7 +323,7 @@ tr:hover td {
   /* cabecera*/
 
     .header {
-        margin-right:0%;
+        margin-right:-2%;
         padding-left: 1%;
         padding-bottom: 5%;
     }
@@ -312,7 +336,7 @@ tr:hover td {
     }
 
     .block-header {
-        padding-left: 15%;
+        padding-left: 13%;
     }
     
     .profilePhoto {
@@ -337,7 +361,7 @@ tr:hover td {
     .lateral-menu{
         padding-top:1%;
         margin-top:0px;
-        width:100%;
+        width:102%;
         height:7%;
         background-color:black;
         color:#bcbcbc;
@@ -362,13 +386,14 @@ tr:hover td {
     /*body*/
 
     #seccion-alumnas, #seccion-general {
-        padding-top:10%;
+        padding-top:12%;
+        
         width:100%;
         color: black;
-        margin-left: 20px;  
+        margin-left: 0px;  
     }
 
-    .title-alumnas, .title-general{  /*palabra general*/  /*palabra alumnas*/
+    .title-alumnas, .title-general{  
         padding-top: 1%;
         padding-left: 2%;
         font-size: 15px;
@@ -382,7 +407,8 @@ tr:hover td {
  
     /*  tabla */
  
-    th {                                                      /*apartados de la tabla*/ 
+    th {   
+        padding-top:60%;                                                   
         font-size: 70%;    
         width: 40%;
         font-weight: normal;    
@@ -399,32 +425,13 @@ tr:hover td {
         overflow: scroll;
         width: 88%;
         height:330px;
+        margin-top: 30px; 
     }
+    
 
     /* GENERAL */
 
-    .general-block1, .general-block2, .general-block3{
-        margin-top: 35px;
-        width: 20%;
-        background:rgb(243, 243, 243);
-        padding: 20px;
-        text-align: center;
-        height: 200px;
-        display:inline;
-        font-size: 13px;
-    }
-
-    .general-block1 {
-        margin-left: 0%;
-    }
-
-    .general-block2{
-        margin-left: 6%;   
-    }
-    
-    .general-block3{ 
-        margin-left: 6%;       
-    }
+ 
     
     .block1-info, .block2-info, .block3-info {
         font-family: 'Bitter', serif;
@@ -443,21 +450,19 @@ tr:hover td {
     /* cabecera*/
 
     .header{
-        margin-right:0%;
-        padding-left: 15%;
+        margin-right:-3%;
         padding-bottom: 5%;
     }
 
     .logo {          
         padding-top: 2%;      
-        padding-right: 2%;
-        padding-left: 80%;   
+        padding-right: 2%;  
         width:90%;
-        padding-left: 2%;   
+        padding-left: 3%;   
     }
 
     .block-header {
-        padding-left: 25%;;
+        padding-left: 30%;;
         padding-right: 25%;
         margin-right:5%;
         border-right:8%px;
@@ -465,7 +470,7 @@ tr:hover td {
     }
     
     .profilePhoto {
-        width:25px;
+        width:21px;
         border-radius:20px;   
     }
       
@@ -485,7 +490,7 @@ tr:hover td {
     .lateral-menu{
         padding-top:2%;
         margin-top:0px;
-        width:100%;
+        width:103%;
         height:5%;
         background-color:black;
         color:#bcbcbc;
@@ -494,21 +499,16 @@ tr:hover td {
         border-left:0px;    
     }
        
-    .menu-option1 {
+    .menu-option1, .menu-option2 {
         margin-top:0%; 
         display:inline-block; 
-        margin-left:25%; 
+        margin-left:16%; 
         margin-right:1%;
         width:80px;
         height:20px; 
     }
 
     .menu-option2 {
-        margin-top:0%; 
-        display:inline-block; 
-        margin-left:2%; 
-        width:50px;
-        height:20px;
         padding-right:2%;
     }
      
@@ -518,7 +518,7 @@ tr:hover td {
     }
 
     .title-menu2 {  
-        margin-left:1%;
+        margin-left:0%;
     }
 
     /*body*/
@@ -527,10 +527,10 @@ tr:hover td {
         padding-top:20%;
         width:100%;
         color: black;
-        margin-left: 20px; 
+        margin-left: 0px; 
     }
 
-    .title-alumnas, .title-general {  /*palabra general*/  /*palabra alumnas*/
+    .title-alumnas, .title-general {  
         padding-top: 1%;
         padding-left: 2%;
         font-size: 13px;
@@ -539,12 +539,12 @@ tr:hover td {
 
     .featured-photo {  /*alumnas imagen*/
         background-image: url("http://www.color-hex.com/palettes/33778.png");
-        height: 25px;    
+        height: 30px;    
     }
  
     /*  tabla */
 
-    th {                                                      /*apartados de la tabla*/ 
+    th {                                                      
         font-size: 70%;    
         width: 40%;
         font-weight: normal;    
@@ -565,21 +565,33 @@ tr:hover td {
         overflow: scroll;
         width: 88%;
         height:330px;
+        margin-top: 30px; 
+       
     }
 
-    .select1, .select2, .select3, {
+    .select1, .select2, {
         font-size:30px;
     }
 
+    .select3, .select4, .search {
+        width:250px;
+    }
+
+  
+
     /* GENERAL */
+
+    .general-title {
+        font-size: 40px;
+    }
 
     .general-block1, .general-block2, .general-block3{
         margin-top: 35px;
-        width: 60%;
+        width: 50%;
         background:rgb(232, 229, 229);
         padding: 20px;
         text-align: center;
-        height: 200px;
+        height: 120px;
         display:inline;
         font-size: 13px;
         display:block;
@@ -600,7 +612,7 @@ tr:hover td {
     .block1-info, .block2-info, .block3-info {
         font-family: 'Bitter', serif;
         font-weight: 700;
-        font-size: 30px;
-        color:black;  
+        font-size: 70px;
+        color:rgb(255, 229 , 33);  
     }
 }
