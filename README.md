@@ -49,22 +49,20 @@ Asimismo, incluimos también un input de buscador.
 
 Nuestra pantalla principal quedaría así:
 
-![PANTALLA]
-(https://crisescobar.files.wordpress.com/2018/07/pantallas.png)
+![PANTALLA-PRINCIPAL](https://crisescobar.files.wordpress.com/2018/07/pantallas.png)
+
 
 Elaboramos también las versiones responsive para tablets y celulares: 
 
 ### Tablet
-![tablet]
-(https://crisescobar.files.wordpress.com/2018/07/tablet.png)
+![tablet](https://crisescobar.files.wordpress.com/2018/07/tablet.png)
 
 ### Celular
-![celular]
-(https://crisescobar.files.wordpress.com/2018/07/celular.png)
+![celular](https://crisescobar.files.wordpress.com/2018/07/celular.png)
 
 Asimismo, agregamos una página de inicio para que el usuario (training manager) pudiera iniciar sesión en nuestro Dashboard mediante un usuario y una contraseña.
-![inicio]
-(https://crisescobar.files.wordpress.com/2018/07/inicio-pantalla.png)
+
+![inicio](https://crisescobar.files.wordpress.com/2018/07/inicio-pantalla.png)
 
 Utilizamos los colores y la tipografía correspondiente a la línea gráfica de Laboratoria, incluimos imágenes e íconos correspondientes para que el usuario se sienta identificado con Laboratoria. 
 
