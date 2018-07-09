@@ -64,7 +64,7 @@ Asimismo, agregamos una página de inicio para que el usuario (training manager)
 
 ![inicio](https://crisescobar.files.wordpress.com/2018/07/inicio-pantalla.png)
 
-Utilizamos los colores y la tipografía correspondiente a la línea gráfica de Laboratoria, incluimos imágenes e íconos correspondientes para que el usuario se sienta identificado con Laboratoria. 
+Utilizamos los colores y la tipografía correspondiente a la línea gráfica de Laboratoria, incluimos imágenes e íconos para que el usuario se sienta identificado con Laboratoria. 
 
 
 
