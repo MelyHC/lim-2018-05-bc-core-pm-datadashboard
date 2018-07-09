@@ -6,60 +6,7 @@ html *{
     padding:0px;
 }
 
-/*inicio*/
- 
-.bodyinicio {
-    background-color: rgb(255, 229 , 33);
-    background-image: url("https://crisescobar.files.wordpress.com/2018/06/imageninicio1.jpg");
-    background-repeat: no-repeat;
-    display: flex;
-    min-height:100vh;
-    float: right;
-    width: 45%;
-}
- 
-#formulario {
-    margin:auto;
-    width: 300px;
-    max-width:500px;
-    background: #F3F3F3;
-    padding:30px;
-    border: 1px solid (rgba(0,0,0.2));
-    font-family: 'Bitter', serif;
-}
 
-h2 {
-    text-align:center;
-    margin-bottom:20px;
-    color: black;
-}
- 
-#usuario, #contraseña, #entrar {
-    display:block;
-    padding:10px;
-    width:80%;
-    margin:20px 0;
-    font-size: 15px;
-    font-family: 'Bitter', serif;
-}
- 
-#entrar {
-    background: black;
-    color:white;
-    cursor: pointer;
-}
- 
-.entrar:hover {
-    background: rgb(51, 51, 51);
-}
- 
-.entrar:active {
-    transform: scale(0.95);
-}
- 
-.login-logo {
-    width: 80%;
-}
  
 /* head */
    
@@ -317,6 +264,82 @@ tr:hover td {
     color:rgb(255, 229 , 33);
 
 }
+
+/*inicio*/
+ 
+.body-login {
+    background-color:  rgb(255, 229 , 33);
+ }
+ .photo-login {
+    
+     margin:0px;
+     width: 50%;
+     padding: 10px; 
+     float: left;  
+     text-align: justify;
+     height:80%;
+    height:100%;
+    position:absolute;
+     background-repeat:no-repeat;
+     background-image: url(https://crisescobar.files.wordpress.com/2018/06/imageninicio1.jpg);
+ 
+ }
+ 
+ .form-right {
+    
+     padding: 10px; 
+     float: right; 
+     width: 45%; 
+     text-align: justify;
+     background-color: rgb(255, 229 , 33);
+     height:700px;
+     padding-left:100px;
+ }
+  
+ #formulario {   
+     margin:160px 85px 120px; 
+     width: 300px;
+     max-width:500px;
+     background: #F3F3F3;
+     padding:30px;
+     border: 1px solid (rgba(0,0,0.2));
+     font-family: 'Bitter', serif;
+ }
+ 
+ h2 {
+     text-align:center;
+     margin-bottom:20px;
+     color: black;
+ }
+  
+ #usuario, #contraseña, #entrar {
+     display:block;
+     padding:10px;
+     width:80%;
+     margin:20px 0;
+     font-size: 15px;
+     font-family: 'Bitter', serif;
+ }
+  
+ #entrar {
+     background: black;
+     color:white;
+     cursor: pointer;
+     font-family: 'Bitter', serif;
+     font-weight: 700;
+ }
+  
+ .entrar:hover {
+     background: rgb(51, 51, 51);
+ }
+  
+ .entrar:active {
+     transform: scale(0.95);
+ }
+  
+ .login-logo {
+     width: 80%;
+ }
 
 @media screen and (min-width: 480px) and (max-width: 798px) {
 

@@ -1,6 +1,6 @@
 //Funcion display para index.html
 mostrar = () => {
-  document.getElementById("seccion-alumnas").style.display = 'none';    //esto sirve para que GENERAL SEA CLICKEABLE
+  document.getElementById("seccion-alumnas").style.display = 'none';    
 }
 const gen = document.getElementById('general'); //VARIABLE EVENTO CLICK GENERAL
 const al = document.getElementById('alumnas');  // VARIABLE EVENTO CLICK ALUMNA
@@ -16,11 +16,11 @@ al.addEventListener("click", () => {
 });
 
 //Función y condiciones para usuario y contraseña de inicio.html
-validar = () => {
+function validar () {
   const usuario = document.getElementById("usuario").value;
   const contraseña = document.getElementById("contraseña").value;
 
-  if (usuario == "alejandralima" && contraseña == "12345") {
+  if (usuario == "alejandra@laboratoria.la" && contraseña == "laboratorialima") {
     location.href = "../src/index.html";       //propiedad para direccionar a un link
   }
   else {
