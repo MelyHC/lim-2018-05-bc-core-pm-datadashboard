@@ -1,0 +1,272 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  font-family: 'Bitter', serif;
+  box-sizing: border-box;
+}
+
+/* body {
+  background-color: #f7f7f7;
+} */
+
+/* Header */
+
+.header {
+  background-color: #ffe521;
+  text-align: center;
+}
+
+.logo {
+  max-width: 90vw;
+  margin-top: 0.8rem;
+}
+
+.block-header, .profile-photo {
+  font-weight: 600;
+}
+
+.block-header {
+  display: flex;
+  font-size: 0.9em;
+  align-items: center;
+  padding: 0 0 1rem 1rem;
+}
+
+.profile-photo {
+  width: 12.5%;
+  border-radius: 100%;
+}
+
+.sub-block {
+  text-align: left;
+  margin-left: 0.5rem;
+}
+
+/*nav horizontal*/
+
+.lateral-menu {
+  background-color: black;
+  font-weight: 700;
+  display: flex;
+  justify-content: space-around;
+}
+
+.menu-option {
+  text-decoration: none;
+  color: white;
+  font-size: 1em;
+  padding: 1rem 0;
+}
+
+.hidden {
+  display: none;
+}
+
+/* General */
+
+.title-general {
+  font-size: 3em;
+  color: #ff009e;
+  margin-bottom: 1rem;
+}
+
+.photo-general {
+  max-width: 70vw;
+  padding: 1rem;
+}
+
+.text-align {
+  text-align: center;
+}
+
+.info-general {
+  font-size: 1em;
+  margin: 1rem 0;
+  padding: 0 2rem;
+}
+
+.flex-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.block-general {
+  margin: 0.5rem;
+  padding: 1.5rem;
+  font-size: 1.15em;
+  font-weight: bold;
+  background-color: #e0e0e0;
+}
+
+.block {
+  display: block;
+}
+
+.block-icon {
+  margin-top: 1rem;
+  color: #ffe521;
+  font-size: 4em;
+}
+
+/* Students */
+
+/* Header students */
+
+.section-content {
+  margin: 1rem 0;
+  color: black;
+}
+
+.title-content {
+  font-size: 2em;
+}
+
+.featured-photo {
+  /* image students */
+  background-color: #56f89a;
+  padding: 1.2rem 0.5rem;
+  margin-bottom: 1rem;
+}
+
+/* Form students */
+
+.form-cohort {
+  padding: 0 1rem;
+}
+
+.select-content {
+  font-size: 1em;
+  padding: 0.5rem;
+  border: none;
+  background-color: #ffffff;
+}
+
+.border-select {
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgb(169, 169, 169);
+  border-radius: 0.6rem;
+}
+
+select {
+  font-family: 'FontAwesome', 'Second Font name'
+}
+
+.icon-select {
+  font-size: 1.2em;
+  margin: auto auto auto 0.5rem;
+}
+
+.space-select {
+  margin-bottom: 0.7rem;
+  display: block;
+  width: 100%;
+}
+
+.space-select-icon {
+  padding-left: 0;
+  min-width: 89%;
+  border-radius: 1rem;
+}
+
+/*  Table students */
+
+.flip-scroll .control-scroll:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+  border-collapse: collapse;
+}
+
+.flip-scroll table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  display: block;
+  position: relative;
+}
+
+.flip-scroll th, .flip-scroll td {
+  margin: 0;
+  vertical-align: bottom;
+}
+
+.flip-scroll thead {
+  display: block;
+  float: left;
+}
+
+.flip-scroll tbody {
+  display: block;
+  position: relative;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.flip-scroll thead tr {
+  display: block;
+}
+
+.flip-scroll tbody tr {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.flip-scroll td, .flip-scroll th {
+  display: block;
+  min-height: 3em;
+  text-align: right;
+}
+
+.flip-scroll th {
+  /* height: auto; */
+  display: block;
+  text-align: left;
+  background-color: #ffe521;
+  font-weight: 700;
+}
+
+.flip-scroll th:last-child, .flip-scroll td:last-child {
+  border-bottom: 1px solid #ddd;
+}
+
+.table-space {
+  margin: 1rem;
+  border-radius: 1rem;
+}
+
+.table-space td, .table-space th {
+  padding: 0.75rem;
+  font-size: 1em;
+}
+
+.table-bordered {
+  border: 1px solid #ddd;
+}
+
+.table-bordered {
+  border-radius: 0.6rem;
+}
+
+.table-bordered thead th {
+  vertical-align: bottom;
+  border-bottom: 1px solid #fff;
+}
+
+.table-bordered td, .table-bordered th {
+  border-bottom: 1px solid #dee2e6;
+  border-left: 1px solid #dee2e6;
+  border-right: 1px solid #dee2e6;
+}
+
+.table-bordered thead th:first-child {
+  border-radius: 0.6rem 0 0;
+}
+
+.table-bordered tbody tr:last-child td:first-child {
+  border-radius: 0 0.6rem 0;
+}
