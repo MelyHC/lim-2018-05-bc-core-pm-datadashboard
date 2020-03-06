@@ -1,6 +1,7 @@
 * {
   margin: 0;
   padding: 0;
+  font-family: 'Bitter', serif;
 }
 
 .body-login {
@@ -49,21 +50,21 @@
   width: 80%;
   margin: 0.5rem 0;
   font-size: 1em;
-  font-family: 'Bitter', serif;
+  border-radius: 0.6rem;
+  border: 1px solid #a9a9a9;
 }
 
 .btn-login {
-  background: black;
-  color: white;
-  border-color: black;
+  background: #000000;
+  color: #ffffff;
+  border-color: #000000;
   cursor: pointer;
-  font-family: 'Bitter', serif;
   font-weight: 700;
 }
 
 .btn-login:hover {
-  background: rgb(51, 51, 51);
-  border-color: rgb(51, 51, 51);
+  background: #333333;
+  border-color: #333333;
 }
 
 .btn-login:active {
