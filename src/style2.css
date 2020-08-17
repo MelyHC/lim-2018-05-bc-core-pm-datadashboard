@@ -29,7 +29,7 @@
 }
 
 .profile-photo {
-  width: 12.5%;
+  width: 50px;
   border-radius: 100%;
 }
 
@@ -55,7 +55,7 @@
   padding: 1rem;
 }
 
-.menu-option:focus-within {
+.menu-option:focus-within, .active {
   /* background-color: #585858; */
   opacity: 1;
 }
@@ -142,6 +142,7 @@
   padding: 0.5rem;
   border: none;
   background-color: #ffffff;
+  cursor: pointer;
 }
 
 .border-select {
@@ -156,18 +157,16 @@
 
 .space-select {
   margin-bottom: 1rem;
-  display: block;
+  /* display: block; */
   width: 100%;
 }
 
 .select-group {
-  position: relative;
   display: flex;
   align-items: stretch;
 }
 
 .space-select-icon {
-  position: relative;
   border-radius: 0.6rem;
   flex: 1 1 0%;
   min-width: 0;
@@ -200,7 +199,6 @@
   border-collapse: collapse;
   border-spacing: 0;
   display: block;
-  position: relative;
 }
 
 .flip-scroll th, .flip-scroll td {
@@ -216,6 +214,7 @@
 .flip-scroll tbody {
   display: block;
   position: relative;
+  background-color: #f0f0f0;
   overflow-x: auto;
   white-space: nowrap;
 }
@@ -236,10 +235,9 @@
 }
 
 .flip-scroll th {
-  /* height: auto; */
   display: block;
   text-align: left;
-  background-color: #ffe521;
+  background-color: #56f89a;
   font-weight: 700;
 }
 
@@ -248,8 +246,8 @@
 }
 
 .table-space {
-  margin: 1rem;
-  border-radius: 1rem;
+  margin: 0 1rem;
+  border-radius: 0.6rem;
 }
 
 .table-space td, .table-space th {
@@ -258,11 +256,8 @@
 }
 
 .table-bordered {
-  border: 1px solid #ddd;
-}
-
-.table-bordered {
   border-radius: 0.6rem;
+  border: 1px solid #ddd;
 }
 
 .table-bordered thead th {
@@ -271,9 +266,9 @@
 }
 
 .table-bordered td, .table-bordered th {
-  border-bottom: 1px solid #dee2e6;
-  border-left: 1px solid #dee2e6;
-  border-right: 1px solid #dee2e6;
+  border-bottom: 1px solid #ffffff;
+  border-left: 1px solid #ffffff;
+  border-right: 1px solid #ffffff;
 }
 
 .table-bordered thead th:first-child {
@@ -310,19 +305,24 @@
   .sub-block {
     display: inline;
   }
+  /* Nav Vertical */
   .lateral-menu {
     top: 0;
     flex-direction: column;
     height: 100%;
-    width: 150px;
+    width: 160px;
     margin-top: 96px;
     justify-content: flex-start;
     position: fixed;
   }
+  .menu-option {
+    padding: 1.2rem;
+    font-size: 1.2em;
+  }
   .section-content {
     margin-top: 96px;
-    margin-left: 150px;
-    position: relative;
+    margin-left: 160px;
+    /* position: relative; */
   }
   .content-space {
     padding-top: 1rem;
@@ -344,5 +344,69 @@
   }
   .block-general {
     margin: 1rem;
+  }
+  /* Students */
+  .featured-photo {
+    background-image: url('./img/alumnas2.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #ffffff;
+    padding: 2.5rem 1rem;
+    margin: 0rem 1rem 1rem;
+    box-shadow: inset 0px 0px 0px 200px #0000005e;
+  }
+  .form-cohort {
+    display: flex;
+    padding: 0;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding-right: 1rem;
+  }
+  .space-select {
+    width: auto;
+    margin-left: 1rem;
+  }
+  /* Table students */
+  .flip-scroll {
+    max-height: 350px;
+    overflow-y: auto;
+  }
+  .flip-scroll table {
+    width: 100%;
+    display: table;
+  }
+  .flip-scroll th, .flip-scroll td {
+    margin: 0;
+    vertical-align: bottom;
+  }
+  .flip-scroll thead {
+    display: table-header-group;
+    float: none;
+  }
+  .flip-scroll tbody {
+    display: table-row-group;
+  }
+  .flip-scroll thead tr {
+    display: table-row;
+  }
+  .table-bordered thead th {
+    position: sticky;
+    top: 0;
+    vertical-align: middle;
+    border-bottom: 1px solid #dee2e6;
+  }
+  .flip-scroll tbody tr {
+    display: table-row;
+    vertical-align: middle;
+  }
+  .flip-scroll td, .flip-scroll th {
+    display: table-cell;
+    text-align: right;
+  }
+  .flip-scroll th:last-child, .flip-scroll td:last-child {
+    border-radius: 0;
+  }
+  .table-bordered thead th:last-child {
+    border-radius: 0;
   }
 }

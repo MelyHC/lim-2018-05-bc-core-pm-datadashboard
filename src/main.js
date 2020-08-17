@@ -1,36 +1,34 @@
-const general = document.getElementById('general');
-const students = document.getElementById('students');
-const sectionStudents = document.getElementById("section-students");
-const sectionGeneral = document.getElementById("section-general");
-const paises = {
-  lim: 'lima',
+// import Chart from 'dist/chart.js';
 
-}
-//Funcion ocultar
-const hide = (tag) => {
-  tag.classList.add('hidden');
-}
+const menu = document.getElementsByClassName('menu-option');
 
-const view = (tag) => {
-  tag.classList.remove('hidden');
-}
+Array.from(menu).forEach((option, i, allOptions) => {
 
-general.addEventListener("click", () => {
-  view(sectionGeneral);
-  hide(sectionStudents);
-});
+  option.addEventListener('click', (e) => {
 
-students.addEventListener("click", () => {
-  view(sectionStudents);
-  hide(sectionGeneral);
-});
+    const { classList, id: currentOptionId } = e.currentTarget;
 
-const chooseCountry = document.getElementById("country");
-const chooseCohort = document.getElementById("cohort");
-const nombreUsuarios = document.getElementById('nombre');
-const searchUser = document.getElementById('boxSearch');
-const studentsOrderBy = document.getElementById('orderBy');
-const studentsOrderDirection = document.getElementById('order');
+    allOptions.forEach(({ classList, id }) => {
+
+      classList.remove('active');
+      const { classList: sectionClassList } = document.getElementById(`section-${id}`);
+
+      if (currentOptionId === id) sectionClassList.remove('hidden')
+      else sectionClassList.add('hidden')
+
+    })
+
+    classList.add('active');
+  })
+})
+
+const chooseCountry = document.getElementById('country');
+const chooseCohort = document.getElementById('cohort');
+const afterChooseCohort = document.getElementById('after-choose-cohort');
+const tableUsers = document.getElementById('table-users');
+const searchUser = document.getElementById('box-search');
+const orderBy = document.getElementById('order-by');
+const orderDirection = document.getElementById('order-direction');
 
 const options = {
   cohort: null,
@@ -45,43 +43,20 @@ const options = {
 
 const allCohors = {
   myCohorts: null,
-  users: null,
-  process: null
+  years: null
 }
 
-const printDataInHTML = (arrForPrint, tag) => {
-  let output = '';
-  output +=
-    `<thead class="control-scroll">
-      <tr>                                                  
-        <th> Nombres </th>                                  
-        <th type="numeric"> General % </th>
-        <th type="numeric"> Ejercicios % </th>
-        <th type="numeric"> Quiz % </th>
-        <th type="numeric"> Score Quiz </th>
-        <th type="numeric"> Promedio Quiz </th>
-        <th type="numeric"> Lecturas % </th>
-      </tr>
-    </thead>
-    <tbody>`;
+const countries = {
+  lim: 'Lima',
+  scl: 'Santiago de Chile',
+  cdmx: 'Ciudad de México',
+  gdl: 'Guadalara',
+  spl: 'Sao Paulo',
+  aqp: 'Arequipa'
+}
 
-  arrForPrint.forEach(({ role, name, stats: { percent, exercises, quizzes, reads } }) => {
-    if (role === "student") {
-      output +=
-        `<tr>
-          <td id= "nombrestabla">${name}</td>
-          <td>${percent}</td> 
-          <td>${exercises.percent}</td>
-          <td>${quizzes.percent}</td>
-          <td>${quizzes.scoreSum}</td>
-          <td>${quizzes.scoreAvg}</td>
-          <td>${reads.percent}</td>
-        </tr>`;
-    }
-  })
-  output += '</tbody>';
-
-  return tag.innerHTML = output;
+const view = (tag) => {
+  tag.classList.remove('hidden');
 }
 
 const pullDataCohorts = async () => {
@@ -90,14 +65,68 @@ const pullDataCohorts = async () => {
     .catch(async err => await err)
 }
 
+const pullDataUsersAndProgress = async () => {
+  return await fetch(`../data/cohorts/lim-2018-03-pre-core-pw/users.json`)
+    .then(async users => {
+      return await fetch(`../data/cohorts/lim-2018-03-pre-core-pw/progress.json`)
+        .then(async progress => {
+          return {
+            users: await users.json(),
+            progress: await progress.json()
+          }
+        })
+        .catch(async err => await err)
+    })
+    .catch(async err => await err)
+
+}
+
 pullDataCohorts()
   .then(cohorts => {
     allCohors.myCohorts = cohorts;
   })
+  .catch(err => alert(`Hubo un error ${err}`))
+
+const printDataTable = (arrForPrint, tag) => {
+  let output = '';
+  output +=
+    `<thead class="control-scroll">
+        <tr>                                                  
+          <th> Nombres </th>                                  
+          <th type="numeric"> General % </th>
+          <th type="numeric"> Ejercicios % </th>
+          <th type="numeric"> Quiz % </th>
+          <th type="numeric"> Score Quiz </th>
+          <th type="numeric"> Promedio Quiz </th>
+          <th type="numeric"> Lecturas % </th>
+        </tr>
+      </thead>
+      <tbody>`;
+
+  arrForPrint.forEach(({ role, name, stats: { percent, exercises, quizzes, reads } }) => {
+    if (role === 'student') {
+      output +=
+        `<tr>
+            <td id= "nombrestabla">${name}</td>
+            <td>${percent}</td> 
+            <td>${exercises.percent}</td>
+            <td>${quizzes.percent}</td>
+            <td>${quizzes.scoreSum}</td>
+            <td>${quizzes.scoreAvg}</td>
+            <td>${reads.percent}</td>
+          </tr>`;
+    }
+  })
+  output += '</tbody>';
+
+  return tag.innerHTML = output;
+}
 
 chooseCountry.addEventListener('change', () => {
   const { myCohorts } = allCohors;
   let output = '';
+
+  view(chooseCohort);
 
   myCohorts.forEach(({ id }) => {
 
@@ -115,36 +144,72 @@ chooseCountry.addEventListener('change', () => {
 chooseCohort.addEventListener('change', () => {
   const { myCohorts } = allCohors;
 
+  view(afterChooseCohort);
+
   myCohorts.forEach(objectCohortSelect => {
-    if (objectCohortSelect.id === chooseCohort.value) {
+    if (objectCohortSelect.id === chooseCohort.value)
       options.cohort = objectCohortSelect;
-    }
   });
 
-  fetch(`../data/cohorts/${chooseCohort.value}/users.json`)
-    .then(response => response.json())
-    .then(arrUsers => {
-      fetch(`../data/cohorts/${chooseCohort.value}/progress.json`)
-        .then(response => response.json())
-        .then(objectProgress => {
-          options.cohortData.users = arrUsers;
-          options.cohortData.progress = objectProgress;
-          printDataInHTML(processCohortData(options), nombreUsuarios);
-        })
+  pullDataUsersAndProgress(chooseCohort.value)
+    .then(usersAndProgress => {
+      options.cohortData = usersAndProgress;
+
+      printDataTable(processCohortData(options), tableUsers);
     })
+    .catch(err => alert(`Hubo un error ${err}`));
 })
 
 searchUser.addEventListener('keyup', () => {
   options.search = searchUser.value;
-  printDataInHTML(processCohortData(options), nombreUsuarios);
+  printDataTable(processCohortData(options), tableUsers);
 })
 
-studentsOrderBy.addEventListener('change', () => {
-  options.orderBy = studentsOrderBy.value;
-  printDataInHTML(processCohortData(options), nombreUsuarios);
+orderBy.addEventListener('change', () => {
+  options.orderBy = orderBy.value;
+  printDataTable(processCohortData(options), tableUsers);
 })
 
-studentsOrderDirection.addEventListener('change', () => {
-  options.orderDirection = studentsOrderDirection.value;
-  printDataInHTML(processCohortData(options), nombreUsuarios);
+orderDirection.addEventListener('change', () => {
+  options.orderDirection = orderDirection.value;
+  printDataTable(processCohortData(options), tableUsers);
 })
+
+// const ctx = document.getElementById('my-stadic');
+
+// const static = new Chart(ctx, {
+//   type: 'bar',
+//   data: {
+//     labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+//     datasets: [{
+//       label: '# of Votes',
+//       data: [12, 19, 3, 5, 2, 3],
+//       backgroundColor: [
+//         'rgba(255, 99, 132, 0.2)',
+//         'rgba(54, 162, 235, 0.2)',
+//         'rgba(255, 206, 86, 0.2)',
+//         'rgba(75, 192, 192, 0.2)',
+//         'rgba(153, 102, 255, 0.2)',
+//         'rgba(255, 159, 64, 0.2)'
+//       ],
+//       borderColor: [
+//         'rgba(255, 99, 132, 1)',
+//         'rgba(54, 162, 235, 1)',
+//         'rgba(255, 206, 86, 1)',
+//         'rgba(75, 192, 192, 1)',
+//         'rgba(153, 102, 255, 1)',
+//         'rgba(255, 159, 64, 1)'
+//       ],
+//       borderWidth: 1
+//     }]
+//   },
+//   options: {
+//     scales: {
+//       yAxes: [{
+//         ticks: {
+//           beginAtZero: true
+//         }
+//       }]
+//     }
+//   }
+// });

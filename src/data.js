@@ -1,5 +1,4 @@
 window.computeUsersStats = (users, progress, courses) => {
-
   users.map(user => {
 
     const userId = user.id;
@@ -44,7 +43,7 @@ window.computeUsersStats = (users, progress, courses) => {
                 reads.completed++;
               }
             }
-            if (part.type === 'practice' && part.hasOwnProperty("exercises")) {
+            if (part.type === 'practice' && part.hasOwnProperty('exercises')) {
 
               const arrContadorExercises = Object.keys(part.exercises);
 
@@ -54,7 +53,7 @@ window.computeUsersStats = (users, progress, courses) => {
             if (part.type === 'quiz') {
               quizzes.total++;
 
-              if (part.completed === 1 && part.hasOwnProperty("score")) {
+              if (part.completed === 1 && part.hasOwnProperty('score')) {
                 quizzes.completed++;
                 quizzes.scoreSum += part.score;
               }
@@ -74,27 +73,26 @@ window.computeUsersStats = (users, progress, courses) => {
 };
 
 window.sortUsers = (users, orderBy, orderDirection) => {
-
   let usersSort = users;
 
   if (orderDirection.length !== 0) {
 
     usersSort = users.sort((a, b) => {
 
-      if (orderBy === "name")
+      if (orderBy === 'name')
         return a.name.localeCompare(b.name);
 
-      else if (orderBy === "percent")
+      else if (orderBy === 'percent')
         return a.stats[orderBy] - b.stats[orderBy];
 
-      else if (orderBy === "exercises" || orderBy === "quizzes" || orderBy === "reads")
+      else if (orderBy === 'exercises' || orderBy === 'quizzes' || orderBy === 'reads')
         return a.stats[orderBy].percent - b.stats[orderBy].percent;
 
-      else if (orderBy === "scoreSum" || orderBy === "scoreAvg")
+      else if (orderBy === 'scoreSum' || orderBy === 'scoreAvg')
         return a.stats.quizzes[orderBy] > b.stats.quizzes[orderBy];
 
     })
-    if (orderDirection === "DESC") {
+    if (orderDirection === 'DESC') {
       usersSort = usersSort.reverse();
     }
   }
@@ -102,7 +100,6 @@ window.sortUsers = (users, orderBy, orderDirection) => {
 }
 
 window.filterUsers = (users, search) => {
-
   let usersFilter = users;
   search = search.toLowerCase();
 
@@ -112,7 +109,6 @@ window.filterUsers = (users, search) => {
 }
 
 window.processCohortData = (options) => {
-
   const coursesCohort = Object.keys(options.cohort.coursesIndex);
   const usersStats = computeUsersStats(options.cohortData.users, options.cohortData.progress, coursesCohort);
   const orderUsers = sortUsers(usersStats, options.orderBy, options.orderDirection);
