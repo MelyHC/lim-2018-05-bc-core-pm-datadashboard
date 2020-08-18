@@ -145,6 +145,7 @@ chooseCohort.addEventListener('change', () => {
   const { myCohorts } = allCohors;
 
   view(afterChooseCohort);
+  afterChooseCohort.classList.add('spaced-inputs');
 
   myCohorts.forEach(objectCohortSelect => {
     if (objectCohortSelect.id === chooseCohort.value)

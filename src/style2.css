@@ -161,6 +161,10 @@
   width: 100%;
 }
 
+.spaced-inputs {
+  display: inline-flex;
+}
+
 .select-group {
   display: flex;
   align-items: stretch;
